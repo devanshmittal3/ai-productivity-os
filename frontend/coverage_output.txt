@@ -1,0 +1,4128 @@
+
+> frontend@0.0.0 test:coverage
+> vitest run --coverage --pool=forks --poolOptions.forks.singleFork
+
+
+[1m[46m RUN [49m[22m [36mv3.2.7 [39m[90mD:/Task optimizer AI/frontend[39m
+      [2mCoverage enabled with [22m[33mv8[39m
+
+ [31m❯[39m src/tests/documents/DocumentsView.test.tsx [2m([22m[2m6 tests[22m[2m | [22m[31m4 failed[39m[2m)[22m[33m 1470[2mms[22m[39m
+   [32m✓[39m DocumentsView[2m > [22mrenders initial list and forms[32m 120[2mms[22m[39m
+[31m   [31m×[31m DocumentsView[2m > [22mallows uploading a new document[39m[33m 1171[2mms[22m[39m
+[31m     → expected "spy" to be called with arguments: [ …(2) ][90m
+
+Received: 
+
+[1m  1st spy call:
+
+[22m[2m  [[22m
+[2m    "http://localhost:8000/api/v1/documents",[22m
+[32m-   ObjectContaining {[90m
+[32m-     "method": "POST",[90m
+[31m+   {[90m
+[31m+     "headers": {[90m
+[31m+       "Authorization": "Bearer mock-token",[90m
+[31m+     },[90m
+[2m    },[22m
+[2m  ][22m
+
+[1m  2nd spy call:
+
+[22m[2m  [[22m
+[32m-   "http://localhost:8000/api/v1/documents",[90m
+[32m-   ObjectContaining {[90m
+[31m+   "http://localhost:8000/api/v1/documents/upload-text",[90m
+[31m+   {[90m
+[31m+     "body": "{\"title\":\"Biology Notes\",\"text\":\"Photosynthesis is the process...\"}",[90m
+[31m+     "headers": {[90m
+[31m+       "Authorization": "Bearer mock-token",[90m
+[31m+       "Content-Type": "application/json",[90m
+[31m+     },[90m
+[2m      "method": "POST",[22m
+[2m    },[22m
+[2m  ][22m
+
+[1m  3rd spy call:
+
+[22m[2m  [[22m
+[2m    "http://localhost:8000/api/v1/documents",[22m
+[32m-   ObjectContaining {[90m
+[32m-     "method": "POST",[90m
+[31m+   {[90m
+[31m+     "headers": {[90m
+[31m+       "Authorization": "Bearer mock-token",[90m
+[31m+     },[90m
+[2m    },[22m
+[2m  ][22m
+[31m[90m
+
+Number of calls: [1m3[22m
+[31m
+
+Ignored nodes: comments, script, style
+[36m<html>[31m
+  [36m<head />[31m
+  [36m<body>[31m
+    [36m<div>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"documents-view"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"documents-grid-split"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"document-manager-panel glass-card"[31m
+          [36m>[31m
+            [36m<h3[31m
+              [33mclass[31m=[32m"section-title"[31m
+            [36m>[31m
+              [0mStudy Library[0m
+            [36m</h3>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"doc-selector-block"[31m
+            [36m>[31m
+              [36m<label>[31m
+                [0mSelect Workspace Document[0m
+              [36m</label>[31m
+              [36m<select[31m
+                [33mclass[31m=[32m"form-input doc-select"[31m
+              [36m>[31m
+                [36m<option[31m
+                  [33mdisabled[31m=[32m""[31m
+                  [33mvalue[31m=[32m""[31m
+                [36m>[31m
+                  [0m-- Choose Document --[0m
+                [36m</option>[31m
+                [36m<option[31m
+                  [33mvalue[31m=[32m"doc-2"[31m
+                [36m>[31m
+                  [0mBiology Notes[0m
+                  [0m ([0m
+                  [0m500[0m
+                  [0m words)[0m
+                [36m</option>[31m
+              [36m</select>[31m
+            [36m</div>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"analysis-buttons-grid"[31m
+            [36m>[31m
+              [36m<button[31m
+                [33mclass[31m=[32m"btn-secondary analysis-btn"[31m
+              [36m>[31m
+                [0mSummarize[0m
+              [36m</button>[31m
+              [36m<button[31m
+                [33mclass[31m=[32m"btn-secondary analysis-btn"[31m
+              [36m>[31m
+                [0mGenerate Flashcards[0m
+              [36m</button>[31m
+              [36m<button[31m
+                [33mclass[31m=[32m"btn-secondary analysis-btn"[31m
+              [36m>[31m
+                [0mGenerate Quiz[0m
+              [36m</button>[31m
+            [36m</div>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"divider-line"[31m
+            [36m/>[31m
+            [36m<form[31m
+              [33mclass[31m=[32m"uploader-form"[31m
+            [36m>[31m
+              [36m<span[31m
+                [33mclass[31m=[32m"details-subheading"[31m
+              [36m>[31m
+                [0mSubmit Reference Material[0m
+              [36m</span>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"field-group"[31m
+              [36m>[31m
+                [36m<input[31m
+                  [33mclass[31m=[32m"form-input"[31m
+                  [33mplaceholder[31m=[32m"Topic Title (e.g. DBMS Normalization)"[31m
+                  [33mrequired[31m=[32m""[31m
+                  [33mtype[31m=[32m"text"[31m
+                  [33mvalue[31m=[32m""[31m
+                [36m/>[31m
+              [36m</div>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"field-group"[31m
+              [36m>[31m
+                [36m<textarea[31m
+                  [33mclass[31m=[32m"form-input doc-textarea"[31m
+                  [33mplaceholder[31m=[32m"Paste study material text content here..."[31m
+                  [33mrequired[31m=[32m""[31m
+                [36m/>[31m
+              [36m</div>[31m
+              [36m<button[31m
+                [33mclass[31m=[32m"btn-primary upload-doc-btn"[31m
+                [33mtype[31m=[32m"submit"[31m
+              [36m>[31m
+                [0mSave reference[0m
+              [36m</button>[31m
+            [36m</form>[31m
+          [36m</div>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"document-tools-panel glass-card"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"tools-tabs"[31m
+            [36m>[31m
+              [36m<button[31m
+                [33mclass[31m=[32m"tool-tab-btn active"[31m
+              [36m>[31m
+                [0mSummary[0m
+              [36m</button>[31m
+              [36m<button[31m
+                [33mclass[31m=[32m"tool-tab-btn "[31m
+              [36m>[31m
+                [0mFlashcards[0m
+              [36m</button>[31m
+              [36m<button[31m
+                [33mclass[31m=[32m"tool-tab-btn "[31m
+              [36m>[31m
+                [0mPractice Quiz[0m
+              [36m</button>[31m
+              [36m<button[31m
+                [33mclass[31m=[32m"tool-tab-btn "[31m
+              [36m>[31m
+                [0mAsk PDF (RAG)[0m
+              [36m</button>[31m
+            [36m</div>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"tool-content-area"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"summary-tab-content"[31m
+              [36m>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"tool-tab-placeholder"[31m
+                [36m>[31m
+                  [36m<svg[31m
+                    [33maria-hidden[31m=[32m"true"[31m
+                    [33mclass[31m=[32m"lucide lucide-file-text place-icon"[31m
+                    [33mfill[31m=[32m"none"[31m
+                    [33mheight[31m=[32m"32"[31m
+                    [33mstroke[31m=[32m"currentColor"[31m
+                    [33mstroke-linecap[31m=[32m"round"[31m
+                    [33mstroke-linejoin[31m=[32m"round"[31m
+                    [33mstroke-width[31m=[32m"2"[31m
+                    [33mviewBox[31m=[32m"0 0 24 24"[31m
+                    [33mwidth[31m=[32m"32"[31m
+                    [33mxmlns[31m=[32m"http://www.w3.org/2000/svg"[31m
+                  [36m>[31m
+                    [36m<path[31m
+                      [33md[31m=[32m"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"[31m
+                    [36m/>[31m
+                    [36m<path[31m
+                      [33md[31m=[32m"M14 2v5a1 1 0 0 0 1 1h5"[31m
+                    [36m/>[31m
+                    [36m<path[31m
+                      [33md[31m=[32m"M10 9H8"[31m
+                    [36m/>[31m
+                    [36m<path[31m
+                      [33md[31m=[32m"M16 13H8"[31m
+                    [36m/>[31m
+                    [36m<path[31m
+                      [33md[31m=[32m"M16 17H8"[31m
+                    [36m/>[31m
+                  [36m</svg>[31m
+                  [36m<p>[31m
+                    [0mNo summary compiled. Select a document on the left and click "Summarize".[0m
+                  [36m</p>[31m
+                [36m</div>[31m
+              [36m</div>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</body>[31m
+[36m</html>[31m[39m
+[31m   [31m×[31m DocumentsView[2m > [22mallows analyzing a selected document for summary[39m[32m 28[2mms[22m[39m
+[31m     → Found a label with the text of: /Select Workspace Document/i, however no form control was found associated to that label. Make sure you're using the "for" attribute or "aria-labelledby" attribute correctly.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"documents-view"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"documents-grid-split"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"document-manager-panel glass-card"[31m
+        [36m>[31m
+          [36m<h3[31m
+            [33mclass[31m=[32m"section-title"[31m
+          [36m>[31m
+            [0mStudy Library[0m
+          [36m</h3>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"doc-selector-block"[31m
+          [36m>[31m
+            [36m<label>[31m
+              [0mSelect Workspace Document[0m
+            [36m</label>[31m
+            [36m<select[31m
+              [33mclass[31m=[32m"form-input doc-select"[31m
+            [36m>[31m
+              [36m<option[31m
+                [33mdisabled[31m=[32m""[31m
+                [33mvalue[31m=[32m""[31m
+              [36m>[31m
+                [0m-- Choose Document --[0m
+              [36m</option>[31m
+              [36m<option[31m
+                [33mvalue[31m=[32m"doc-1"[31m
+              [36m>[31m
+                [0mCalculus Notes[0m
+                [0m ([0m
+                [0m1000[0m
+                [0m words)[0m
+              [36m</option>[31m
+            [36m</select>[31m
+          [36m</div>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"analysis-buttons-grid"[31m
+          [36m>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"btn-secondary analysis-btn"[31m
+            [36m>[31m
+              [0mSummarize[0m
+            [36m</button>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"btn-secondary analysis-btn"[31m
+            [36m>[31m
+              [0mGenerate Flashcards[0m
+            [36m</button>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"btn-secondary analysis-btn"[31m
+            [36m>[31m
+              [0mGenerate Quiz[0m
+            [36m</button>[31m
+          [36m</div>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"divider-line"[31m
+          [36m/>[31m
+          [36m<form[31m
+            [33mclass[31m=[32m"uploader-form"[31m
+          [36m>[31m
+            [36m<span[31m
+              [33mclass[31m=[32m"details-subheading"[31m
+            [36m>[31m
+              [0mSubmit Reference Material[0m
+            [36m</span>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"field-group"[31m
+            [36m>[31m
+              [36m<input[31m
+                [33mclass[31m=[32m"form-input"[31m
+                [33mplaceholder[31m=[32m"Topic Title (e.g. DBMS Normalization)"[31m
+                [33mrequired[31m=[32m""[31m
+                [33mtype[31m=[32m"text"[31m
+                [33mvalue[31m=[32m""[31m
+              [36m/>[31m
+            [36m</div>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"field-group"[31m
+            [36m>[31m
+              [36m<textarea[31m
+                [33mclass[31m=[32m"form-input doc-textarea"[31m
+                [33mplaceholder[31m=[32m"Paste study material text content here..."[31m
+                [33mrequired[31m=[32m""[31m
+              [36m/>[31m
+            [36m</div>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"btn-primary upload-doc-btn"[31m
+              [33mtype[31m=[32m"submit"[31m
+            [36m>[31m
+              [0mSave reference[0m
+            [36m</button>[31m
+          [36m</form>[31m
+        [36m</div>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"document-tools-panel glass-card"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"tools-tabs"[31m
+          [36m>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"tool-tab-btn active"[31m
+            [36m>[31m
+              [0mSummary[0m
+            [36m</button>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"tool-tab-btn "[31m
+            [36m>[31m
+              [0mFlashcards[0m
+            [36m</button>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"tool-tab-btn "[31m
+            [36m>[31m
+              [0mPractice Quiz[0m
+            [36m</button>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"tool-tab-btn "[31m
+            [36m>[31m
+              [0mAsk PDF (RAG)[0m
+            [36m</button>[31m
+          [36m</div>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"tool-content-area"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"summary-tab-content"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"tool-tab-placeholder"[31m
+              [36m>[31m
+                [36m<svg[31m
+                  [33maria-hidden[31m=[32m"true"[31m
+                  [33mclass[31m=[32m"lucide lucide-file-text place-icon"[31m
+                  [33mfill[31m=[32m"none"[31m
+                  [33mheight[31m=[32m"32"[31m
+                  [33mstroke[31m=[32m"currentColor"[31m
+                  [33mstroke-linecap[31m=[32m"round"[31m
+                  [33mstroke-linejoin[31m=[32m"round"[31m
+                  [33mstroke-width[31m=[32m"2"[31m
+                  [33mviewBox[31m=[32m"0 0 24 24"[31m
+                  [33mwidth[31m=[32m"32"[31m
+                  [33mxmlns[31m=[32m"http://www.w3.org/2000/svg"[31m
+                [36m>[31m
+                  [36m<path[31m
+                    [33md[31m=[32m"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"[31m
+                  [36m/>[31m
+                  [36m<path[31m
+                    [33md[31m=[32m"M14 2v5a1 1 0 0 0 1 1h5"[31m
+                  [36m/>[31m
+                  [36m<path[31m
+                    [33md[31m=[32m"M10 9H8"[31m
+                  [36m/>[31m
+                  [36m<path[31m
+                    [33md[31m=[32m"M16 13H8"[31m
+                  [36m/>[31m
+                  [36m<path[31m
+                    [33md[31m=[32m"M16 17H8"[31m
+                  [36m/>[31m
+                [36m</svg>[31m
+                [36m<p>[31m
+                  [0mNo summary compiled. Select a document on the left and click "Summarize".[0m
+                [36m</p>[31m
+              [36m</div>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+[31m   [31m×[31m DocumentsView[2m > [22mallows analyzing a selected document for flashcards and interactive playing[39m[32m 24[2mms[22m[39m
+[31m     → Found a label with the text of: /Select Workspace Document/i, however no form control was found associated to that label. Make sure you're using the "for" attribute or "aria-labelledby" attribute correctly.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"documents-view"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"documents-grid-split"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"document-manager-panel glass-card"[31m
+        [36m>[31m
+          [36m<h3[31m
+            [33mclass[31m=[32m"section-title"[31m
+          [36m>[31m
+            [0mStudy Library[0m
+          [36m</h3>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"doc-selector-block"[31m
+          [36m>[31m
+            [36m<label>[31m
+              [0mSelect Workspace Document[0m
+            [36m</label>[31m
+            [36m<select[31m
+              [33mclass[31m=[32m"form-input doc-select"[31m
+            [36m>[31m
+              [36m<option[31m
+                [33mdisabled[31m=[32m""[31m
+                [33mvalue[31m=[32m""[31m
+              [36m>[31m
+                [0m-- Choose Document --[0m
+              [36m</option>[31m
+              [36m<option[31m
+                [33mvalue[31m=[32m"doc-1"[31m
+              [36m>[31m
+                [0mCalculus Notes[0m
+                [0m ([0m
+                [0m1000[0m
+                [0m words)[0m
+              [36m</option>[31m
+            [36m</select>[31m
+          [36m</div>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"analysis-buttons-grid"[31m
+          [36m>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"btn-secondary analysis-btn"[31m
+            [36m>[31m
+              [0mSummarize[0m
+            [36m</button>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"btn-secondary analysis-btn"[31m
+            [36m>[31m
+              [0mGenerate Flashcards[0m
+            [36m</button>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"btn-secondary analysis-btn"[31m
+            [36m>[31m
+              [0mGenerate Quiz[0m
+            [36m</button>[31m
+          [36m</div>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"divider-line"[31m
+          [36m/>[31m
+          [36m<form[31m
+            [33mclass[31m=[32m"uploader-form"[31m
+          [36m>[31m
+            [36m<span[31m
+              [33mclass[31m=[32m"details-subheading"[31m
+            [36m>[31m
+              [0mSubmit Reference Material[0m
+            [36m</span>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"field-group"[31m
+            [36m>[31m
+              [36m<input[31m
+                [33mclass[31m=[32m"form-input"[31m
+                [33mplaceholder[31m=[32m"Topic Title (e.g. DBMS Normalization)"[31m
+                [33mrequired[31m=[32m""[31m
+                [33mtype[31m=[32m"text"[31m
+                [33mvalue[31m=[32m""[31m
+              [36m/>[31m
+            [36m</div>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"field-group"[31m
+            [36m>[31m
+              [36m<textarea[31m
+                [33mclass[31m=[32m"form-input doc-textarea"[31m
+                [33mplaceholder[31m=[32m"Paste study material text content here..."[31m
+                [33mrequired[31m=[32m""[31m
+              [36m/>[31m
+            [36m</div>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"btn-primary upload-doc-btn"[31m
+              [33mtype[31m=[32m"submit"[31m
+            [36m>[31m
+              [0mSave reference[0m
+            [36m</button>[31m
+          [36m</form>[31m
+        [36m</div>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"document-tools-panel glass-card"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"tools-tabs"[31m
+          [36m>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"tool-tab-btn active"[31m
+            [36m>[31m
+              [0mSummary[0m
+            [36m</button>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"tool-tab-btn "[31m
+            [36m>[31m
+              [0mFlashcards[0m
+            [36m</button>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"tool-tab-btn "[31m
+            [36m>[31m
+              [0mPractice Quiz[0m
+            [36m</button>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"tool-tab-btn "[31m
+            [36m>[31m
+              [0mAsk PDF (RAG)[0m
+            [36m</button>[31m
+          [36m</div>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"tool-content-area"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"summary-tab-content"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"tool-tab-placeholder"[31m
+              [36m>[31m
+                [36m<svg[31m
+                  [33maria-hidden[31m=[32m"true"[31m
+                  [33mclass[31m=[32m"lucide lucide-file-text place-icon"[31m
+                  [33mfill[31m=[32m"none"[31m
+                  [33mheight[31m=[32m"32"[31m
+                  [33mstroke[31m=[32m"currentColor"[31m
+                  [33mstroke-linecap[31m=[32m"round"[31m
+                  [33mstroke-linejoin[31m=[32m"round"[31m
+                  [33mstroke-width[31m=[32m"2"[31m
+                  [33mviewBox[31m=[32m"0 0 24 24"[31m
+                  [33mwidth[31m=[32m"32"[31m
+                  [33mxmlns[31m=[32m"http://www.w3.org/2000/svg"[31m
+                [36m>[31m
+                  [36m<path[31m
+                    [33md[31m=[32m"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"[31m
+                  [36m/>[31m
+                  [36m<path[31m
+                    [33md[31m=[32m"M14 2v5a1 1 0 0 0 1 1h5"[31m
+                  [36m/>[31m
+                  [36m<path[31m
+                    [33md[31m=[32m"M10 9H8"[31m
+                  [36m/>[31m
+                  [36m<path[31m
+                    [33md[31m=[32m"M16 13H8"[31m
+                  [36m/>[31m
+                  [36m<path[31m
+                    [33md[31m=[32m"M16 17H8"[31m
+                  [36m/>[31m
+                [36m</svg>[31m
+                [36m<p>[31m
+                  [0mNo summary compiled. Select a document on the left and click "Summarize".[0m
+                [36m</p>[31m
+              [36m</div>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+[31m   [31m×[31m DocumentsView[2m > [22mallows analyzing a selected document for quiz and playing/submitting/resetting quiz[39m[32m 32[2mms[22m[39m
+[31m     → Found a label with the text of: /Select Workspace Document/i, however no form control was found associated to that label. Make sure you're using the "for" attribute or "aria-labelledby" attribute correctly.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"documents-view"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"documents-grid-split"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"document-manager-panel glass-card"[31m
+        [36m>[31m
+          [36m<h3[31m
+            [33mclass[31m=[32m"section-title"[31m
+          [36m>[31m
+            [0mStudy Library[0m
+          [36m</h3>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"doc-selector-block"[31m
+          [36m>[31m
+            [36m<label>[31m
+              [0mSelect Workspace Document[0m
+            [36m</label>[31m
+            [36m<select[31m
+              [33mclass[31m=[32m"form-input doc-select"[31m
+            [36m>[31m
+              [36m<option[31m
+                [33mdisabled[31m=[32m""[31m
+                [33mvalue[31m=[32m""[31m
+              [36m>[31m
+                [0m-- Choose Document --[0m
+              [36m</option>[31m
+              [36m<option[31m
+                [33mvalue[31m=[32m"doc-1"[31m
+              [36m>[31m
+                [0mCalculus Notes[0m
+                [0m ([0m
+                [0m1000[0m
+                [0m words)[0m
+              [36m</option>[31m
+            [36m</select>[31m
+          [36m</div>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"analysis-buttons-grid"[31m
+          [36m>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"btn-secondary analysis-btn"[31m
+            [36m>[31m
+              [0mSummarize[0m
+            [36m</button>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"btn-secondary analysis-btn"[31m
+            [36m>[31m
+              [0mGenerate Flashcards[0m
+            [36m</button>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"btn-secondary analysis-btn"[31m
+            [36m>[31m
+              [0mGenerate Quiz[0m
+            [36m</button>[31m
+          [36m</div>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"divider-line"[31m
+          [36m/>[31m
+          [36m<form[31m
+            [33mclass[31m=[32m"uploader-form"[31m
+          [36m>[31m
+            [36m<span[31m
+              [33mclass[31m=[32m"details-subheading"[31m
+            [36m>[31m
+              [0mSubmit Reference Material[0m
+            [36m</span>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"field-group"[31m
+            [36m>[31m
+              [36m<input[31m
+                [33mclass[31m=[32m"form-input"[31m
+                [33mplaceholder[31m=[32m"Topic Title (e.g. DBMS Normalization)"[31m
+                [33mrequired[31m=[32m""[31m
+                [33mtype[31m=[32m"text"[31m
+                [33mvalue[31m=[32m""[31m
+              [36m/>[31m
+            [36m</div>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"field-group"[31m
+            [36m>[31m
+              [36m<textarea[31m
+                [33mclass[31m=[32m"form-input doc-textarea"[31m
+                [33mplaceholder[31m=[32m"Paste study material text content here..."[31m
+                [33mrequired[31m=[32m""[31m
+              [36m/>[31m
+            [36m</div>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"btn-primary upload-doc-btn"[31m
+              [33mtype[31m=[32m"submit"[31m
+            [36m>[31m
+              [0mSave reference[0m
+            [36m</button>[31m
+          [36m</form>[31m
+        [36m</div>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"document-tools-panel glass-card"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"tools-tabs"[31m
+          [36m>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"tool-tab-btn active"[31m
+            [36m>[31m
+              [0mSummary[0m
+            [36m</button>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"tool-tab-btn "[31m
+            [36m>[31m
+              [0mFlashcards[0m
+            [36m</button>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"tool-tab-btn "[31m
+            [36m>[31m
+              [0mPractice Quiz[0m
+            [36m</button>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"tool-tab-btn "[31m
+            [36m>[31m
+              [0mAsk PDF (RAG)[0m
+            [36m</button>[31m
+          [36m</div>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"tool-content-area"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"summary-tab-content"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"tool-tab-placeholder"[31m
+              [36m>[31m
+                [36m<svg[31m
+                  [33maria-hidden[31m=[32m"true"[31m
+                  [33mclass[31m=[32m"lucide lucide-file-text place-icon"[31m
+                  [33mfill[31m=[32m"none"[31m
+                  [33mheight[31m=[32m"32"[31m
+                  [33mstroke[31m=[32m"currentColor"[31m
+                  [33mstroke-linecap[31m=[32m"round"[31m
+                  [33mstroke-linejoin[31m=[32m"round"[31m
+                  [33mstroke-width[31m=[32m"2"[31m
+                  [33mviewBox[31m=[32m"0 0 24 24"[31m
+                  [33mwidth[31m=[32m"32"[31m
+                  [33mxmlns[31m=[32m"http://www.w3.org/2000/svg"[31m
+                [36m>[31m
+                  [36m<path[31m
+                    [33md[31m=[32m"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"[31m
+                  [36m/>[31m
+                  [36m<path[31m
+                    [33md[31m=[32m"M14 2v5a1 1 0 0 0 1 1h5"[31m
+                  [36m/>[31m
+                  [36m<path[31m
+                    [33md[31m=[32m"M10 9H8"[31m
+                  [36m/>[31m
+                  [36m<path[31m
+                    [33md[31m=[32m"M16 13H8"[31m
+                  [36m/>[31m
+                  [36m<path[31m
+                    [33md[31m=[32m"M16 17H8"[31m
+                  [36m/>[31m
+                [36m</svg>[31m
+                [36m<p>[31m
+                  [0mNo summary compiled. Select a document on the left and click "Summarize".[0m
+                [36m</p>[31m
+              [36m</div>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+   [32m✓[39m DocumentsView[2m > [22mallows searching using RAG query[32m 89[2mms[22m[39m
+ [31m❯[39m src/tests/tasks/TasksView.test.tsx [2m([22m[2m5 tests[22m[2m | [22m[31m2 failed[39m[2m)[22m[32m 177[2mms[22m[39m
+   [32m✓[39m TasksView[2m > [22mrenders loading state initially[32m 21[2mms[22m[39m
+   [32m✓[39m TasksView[2m > [22mrenders tasks checklist after load[32m 39[2mms[22m[39m
+   [32m✓[39m TasksView[2m > [22msubmits manual task form successfully[32m 53[2mms[22m[39m
+[31m   [31m×[31m TasksView[2m > [22mhandles subtasks rendering, creation and completion toggling[39m[32m 38[2mms[22m[39m
+[31m     → Unable to find an element with the text: Write first test. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"tasks-view"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"nlp-prompt-card glass-panel"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"nlp-header"[31m
+        [36m>[31m
+          [36m<svg[31m
+            [33maria-hidden[31m=[32m"true"[31m
+            [33mclass[31m=[32m"lucide lucide-sparkles nlp-icon"[31m
+            [33mfill[31m=[32m"none"[31m
+            [33mheight[31m=[32m"16"[31m
+            [33mstroke[31m=[32m"currentColor"[31m
+            [33mstroke-linecap[31m=[32m"round"[31m
+            [33mstroke-linejoin[31m=[32m"round"[31m
+            [33mstroke-width[31m=[32m"2"[31m
+            [33mviewBox[31m=[32m"0 0 24 24"[31m
+            [33mwidth[31m=[32m"16"[31m
+            [33mxmlns[31m=[32m"http://www.w3.org/2000/svg"[31m
+          [36m>[31m
+            [36m<path[31m
+              [33md[31m=[32m"M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"[31m
+            [36m/>[31m
+            [36m<path[31m
+              [33md[31m=[32m"M20 2v4"[31m
+            [36m/>[31m
+            [36m<path[31m
+              [33md[31m=[32m"M22 4h-4"[31m
+            [36m/>[31m
+            [36m<circle[31m
+              [33mcx[31m=[32m"4"[31m
+              [33mcy[31m=[32m"20"[31m
+              [33mr[31m=[32m"2"[31m
+            [36m/>[31m
+          [36m</svg>[31m
+          [36m<span>[31m
+            [0mAI Task Ingestion[0m
+          [36m</span>[31m
+        [36m</div>[31m
+        [36m<form[31m
+          [33mclass[31m=[32m"nlp-form"[31m
+        [36m>[31m
+          [36m<input[31m
+            [33mclass[31m=[32m"form-input nlp-input"[31m
+            [33mplaceholder[31m=[32m"e.g. Schedule database mid-term prep for 90 mins next Wednesday. Mark it high priority, tags: dbms, college."[31m
+            [33mtype[31m=[32m"text"[31m
+            [33mvalue[31m=[32m""[31m
+          [36m/>[31m
+          [36m<button[31m
+            [33mclass[31m=[32m"btn-primary nlp-btn"[31m
+            [33mdisabled[31m=[32m""[31m
+            [33mtype[31m=[32m"submit"[31m
+          [36m>[31m
+            [0mAnalyze[0m
+          [36m</button>[31m
+        [36m</form>[31m
+      [36m</div>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"tasks-layout-split"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"tasks-list-panel glass-card"[31m
+        [36m>[31m
+          [36m<h3[31m
+            [33mclass[31m=[32m"section-title"[31m
+          [36m>[31m
+            [0mTask Backlog[0m
+          [36m</h3>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"tasks-list"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"task-card "[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"task-row"[31m
+              [36m>[31m
+                [36m<button[31m
+                  [33mclass[31m=[32m"toggle-status-btn"[31m
+                [36m>[31m
+                  [36m<svg[31m
+                    [33maria-hidden[31m=[32m"true"[31m
+                    [33mclass[31m=[32m"lucide lucide-circle unchecked-icon"[31m
+                    [33mfill[31m=[32m"none"[31m
+                    [33mheight[31m=[32m"20"[31m
+                    [33mstroke[31m=[32m"currentColor"[31m
+                    [33mstroke-linecap[31m=[32m"round"[31m
+                    [33mstroke-linejoin[31m=[32m"round"[31m
+                    [33mstroke-width[31m=[32m"2"[31m
+                    [33mviewBox[31m=[32m"0 0 24 24"[31m
+                    [33mwidth[31m=[32m"20"[31m
+                    [33mxmlns[31m=[32m"http://www.w3.org/2000/svg"[31m
+                  [36m>[31m
+                    [36m<circle[31m
+                      [33mcx[31m=[32m"12"[31m
+                      [33mcy[31m=[32m"12"[31m
+                      [33mr[31m=[32m"10"[31m
+                    [36m/>[31m
+                  [36m</svg>[31m
+                [36m</button>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"task-info-block"[31m
+                [36m>[31m
+                  [36m<span[31m
+                    [33mclass[31m=[32m"task-title-text"[31m
+                  [36m>[31m
+                    [0mLearn Vitest[0m
+                  [36m</span>[31m
+                  [36m<div[31m
+                    [33mclass[31m=[32m"task-meta-tags"[31m
+                  [36m>[31m
+                    [36m<span[31m
+                      [33mclass[31m=[32m"priority-badge high"[31m
+                    [36m>[31m
+                      [0mhigh[0m
+                    [36m</span>[31m
+                    [36m<span[31m
+                      [33mclass[31m=[32m"category-badge"[31m
+                    [36m>[31m
+                      [0mWork[0m
+                    [36m</span>[31m
+                    [36m<span[31m
+                      [33mclass[31m=[32m"duration-badge"[31m
+                    [36m>[31m
+                      [36m<svg[31m
+                        [33maria-hidden[31m=[32m"true"[31m
+                        [33mclass[31m=[32m"lucide lucide-clock"[31m
+                        [33mfill[31m=[32m"none"[31m
+                        [33mheight[31m=[32m"10"[31m
+                        [33mstroke[31m=[32m"currentColor"[31m
+                        [33mstroke-linecap[31m=[32m"round"[31m
+                        [33mstroke-linejoin[31m=[32m"round"[31m
+                        [33mstroke-width[31m=[32m"2"[31m
+                        [33mviewBox[31m=[32m"0 0 24 24"[31m
+                        [33mwidth[31m=[32m"10"[31m
+                        [33mxmlns[31m=[32m"http://www.w3.org/2000/svg"[31m
+                      [36m>[31m
+                        [36m<circle[31m
+                          [33mcx[31m=[32m"12"[31m
+                          [33mcy[31m=[32m"12"[31m
+                          [33mr[31m=[32m"10"[31m
+                        [36m/>[31m
+                        [36m<path[31m
+                          [33md[31m=[32m"M12 6v6l4 2"[31m
+                        [36m/>[31m
+                      [36m</svg>[31m
+                      [0m60[0m
+                      [0mm[0m
+                    [36m</span>[31m
+                    [36m<span[31m
+                      [33mclass[31m=[32m"tag-badge"[31m
+                    [36m>[31m
+                      [0m#[0m
+                      [0mtest[0m
+                    [36m</span>[31m
+                    [36m<span[31m
+                      [33mclass[31m=[32m"tag-badge"[31m
+                    [36m>[31m
+                      [0m#[0m
+                      [0mreact[0m
+                    [36m</span>[31m
+                  [36m</div>[31m
+                [36m</div>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"task-actions"[31m
+                [36m>[31m
+                  [36m<button[31m
+                    [33mclass[31m=[32m"expand-details-btn"[31m
+                  [36m>[31m
+                    [36m<svg[31m
+                      [33maria-hidden[31m=[32m"true"[31m
+                      [33mclass[31m=[32m"lucide lucide-chevron-down"[31m
+                      [33mfill[31m=[32m"none"[31m
+                      [33mheight[31m=[32m"16"[31m
+                      [33mstroke[31m=[32m"currentColor"[31m
+                      [33mstroke-linecap[31m=[32m"round"[31m
+                      [33mstroke-linejoin[31m=[32m"round"[31m
+                      [33mstroke-width[31m=[32m"2"[31m
+                      [33mviewBox[31m=[32m"0 0 24 24"[31m
+                      [33mwidth[31m=[32m"16"[31m
+                      [33mxmlns[31m=[32m"http://www.w3.org/2000/svg"[31m
+                    [36m>[31m
+                      [36m<path[31m
+                        [33md[31m=[32m"m6 9 6 6 6-6"[31m
+                      [36m/>[31m
+                    [36m</svg>[31m
+                  [36m</button>[31m
+                  [36m<button[31m
+                    [33mclass[31m=[32m"delete-task-btn"[31m
+                  [36m>[31m
+                    [36m<svg[31m
+                      [33maria-hidden[31m=[32m"true"[31m
+                      [33mclass[31m=[32m"lucide lucide-trash2 lucide-trash-2"[31m
+                      [33mfill[31m=[32m"none"[31m
+                      [33mheight[31m=[32m"16"[31m
+                      [33mstroke[31m=[32m"currentColor"[31m
+                      [33mstroke-linecap[31m=[32m"round"[31m
+                      [33mstroke-linejoin[31m=[32m"round"[31m
+                      [33mstroke-width[31m=[32m"2"[31m
+                      [33mviewBox[31m=[32m"0 0 24 24"[31m
+                      [33mwidth[31m=[32m"16"[31m
+                      [33mxmlns[31m=[32m"http://www.w3.org/2000/svg"[31m
+                    [36m>[31m
+                      [36m<path[31m
+                        [33md[31m=[32m"M10 11v6"[31m
+                      [36m/>[31m
+                      [36m<path[31m
+                        [33md[31m=[32m"M14 11v6"[31m
+                      [36m/>[31m
+                      [36m<path[31m
+                        [33md[31m=[32m"M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"[31m
+                      [36m/>[31m
+                      [36m<path[31m
+                        [33md[31m=[32m"M3 6h18"[31m
+                      [36m/>[31m
+                      [36m<path[31m
+                        [33md[31m=[32m"M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"[31m
+                      [36m/>[31m
+                    [36m</svg>[31m
+                  [36m</button>[31m
+                [36m</div>[31m
+              [36m</div>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"task-creator-panel glass-card"[31m
+        [36m>[31m
+          [36m<h3[31m
+            [33mclass[31m=[32m"section-title"[31m
+          [36m>[31m
+            [0mNew Task[0m
+          [36m</h3>[31m
+          [36m<form[31m
+            [33mclass[31m=[32m"creator-form"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"field-group"[31m
+            [36m>[31m
+              [36m<label>[31m
+                [0mTask Title[0m
+              [36m</label>[31m
+              [36m<input[31m
+                [33mclass[31m=[32m"form-input"[31m
+                [33mplaceholder[31m=[32m"Database assignment..."[31m
+                [33mrequired[31m=[32m""[31m
+                [33mtype[31m=[32m"text"[31m
+                [33mvalue[31m=[32m""[31m
+              [36m/>[31m
+            [36m</div>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"field-group"[31m
+            [36m>[31m
+              [36m<label>[31m
+                [0mDescription[0m
+              [36m</label>[31m
+              [36m<textarea[31m
+                [33mclass[31m=[32m"form-input"[31m
+                [33mplaceholder[31m=[32m"Practice normalization and SQL indexing..."[31m
+              [36m/>[31m
+            [36m</div>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"form-row"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"field-group flex-1"[31m
+              [36m>[31m
+                [36m<label>[31m
+                  [0mPriority[0m
+                [36m</label>[31m
+                [36m<select[31m
+                  [33mclass[31m=[32m"form-input"[31m
+                [36m>[31m
+                  [36m<option[31m
+                    [33mvalue[31m=[32m"low"[31m
+                  [36m>[31m
+                    [0mLow[0m
+                  [36m</option>[31m
+                  [36m<option[31m
+                    [33mvalue[31m=[32m"medium"[31m
+                  [36m>[31m
+                    [0mMedium[0m
+                  [36m</option>[31m
+                  [36m<option[31m
+                    [33mvalue[31m=[32m"high"[31m
+                  [36m>[31m
+                    [0mHigh[0m
+                  [36m</option>[31m
+                  [36m<option[31m
+                    [33mvalue[31m=[32m"urgent"[31m
+                  [36m>[31m
+                    [0mUrgent[0m
+                  [36m</option>[31m
+                [36m</select>[31m
+              [36m</div>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"field-group flex-1"[31m
+              [36m>[31m
+                [36m<label>[31m
+                  [0mMinutes[0m
+                [36m</label>[31m
+                [36m<input[31m
+                  [33mclass[31m=[32m"form-input"[31m
+                  [33mmax[31m=[32m"240"[31m
+                  [33mmin[31m=[32m"5"[31m
+                  [33mtype[31m=[32m"number"[31m
+                  [33mvalue[31m=[32m"30"[31m
+                [36m/>[31m
+              [36m</div>[31m
+            [36m</div>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"form-row"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"field-group flex-1"[31m
+              [36m>[31m
+                [36m<label>[31m
+                  [0mCategory[0m
+                [36m</label>[31m
+                [36m<input[31m
+                  [33mclass[31m=[32m"form-input"[31m
+                  [33mplaceholder[31m=[32m"e.g. Work, College"[31m
+                  [33mtype[31m=[32m"text"[31m
+                  [33mvalue[31m=[32m"Work"[31m
+                [36m/>[31m
+              [36m</div>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"field-group flex-1"[31m
+              [36m>[31m
+                [36m<label>[31m
+                  [0mTags (comma separated)[0m
+                [36m</label>[31m
+                [36m<input[31m
+                  [33mclass[31m=[32m"form-input"[31m
+                  [33mplaceholder[31m=[32m"sql, study"[31m
+                  [33mtype[31m=[32m"text"[31m
+                  [33mvalue[31m=[32m""[31m
+                [36m/>[31m
+              [36m</div>[31m
+            [36m</div>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"btn-primary submit-creator-btn"[31m
+              [33mtype[31m=[32m"submit"[31m
+            [36m>[31m
+              [36m<svg[31m
+                [33maria-hidden[31m=[32m"true"[31m
+                [33mclass[31m=[32m"lucide lucide-plus"[31m
+                [33mfill[31m=[32m"none"[31m
+                [33mheight[31m=[32m"16"[31m
+                [33mstroke[31m=[32m"currentColor"[31m
+                [33mstroke-linecap[31m=[32m"round"[31m
+                [33mstroke-linejoin[31m=[32m"round"[31m
+                [33mstroke-width[31m=[32m"2"[31m
+                [33mviewBox[31m=[32m"0 0 24 24"[31m
+                [33mwidth[31m=[32m"16"[31m
+                [33mxmlns[31m=[32m"http://www.w3.org/2000/svg"[31m
+              [36m>[31m
+                [36m<path[31m
+                  [33md[31m=[32m"M5 12h14"[31m
+                [36m/>[31m
+                [36m<path[31m
+                  [33md[31m=[32m"M12 5v14"[31m
+                [36m/>[31m
+              [36m</svg>[31m
+              [36m<span>[31m
+                [0mCreate Task[0m
+              [36m</span>[31m
+            [36m</button>[31m
+          [36m</form>[31m
+        [36m</div>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+[31m   [31m×[31m TasksView[2m > [22mhandles AI NLP task parsing and approval[39m[32m 25[2mms[22m[39m
+[31m     → Unable to find an element with the placeholder text of: /e.g. Schedule a 45m workout/i
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"tasks-view"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"nlp-prompt-card glass-panel"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"nlp-header"[31m
+        [36m>[31m
+          [36m<svg[31m
+            [33maria-hidden[31m=[32m"true"[31m
+            [33mclass[31m=[32m"lucide lucide-sparkles nlp-icon"[31m
+            [33mfill[31m=[32m"none"[31m
+            [33mheight[31m=[32m"16"[31m
+            [33mstroke[31m=[32m"currentColor"[31m
+            [33mstroke-linecap[31m=[32m"round"[31m
+            [33mstroke-linejoin[31m=[32m"round"[31m
+            [33mstroke-width[31m=[32m"2"[31m
+            [33mviewBox[31m=[32m"0 0 24 24"[31m
+            [33mwidth[31m=[32m"16"[31m
+            [33mxmlns[31m=[32m"http://www.w3.org/2000/svg"[31m
+          [36m>[31m
+            [36m<path[31m
+              [33md[31m=[32m"M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"[31m
+            [36m/>[31m
+            [36m<path[31m
+              [33md[31m=[32m"M20 2v4"[31m
+            [36m/>[31m
+            [36m<path[31m
+              [33md[31m=[32m"M22 4h-4"[31m
+            [36m/>[31m
+            [36m<circle[31m
+              [33mcx[31m=[32m"4"[31m
+              [33mcy[31m=[32m"20"[31m
+              [33mr[31m=[32m"2"[31m
+            [36m/>[31m
+          [36m</svg>[31m
+          [36m<span>[31m
+            [0mAI Task Ingestion[0m
+          [36m</span>[31m
+        [36m</div>[31m
+        [36m<form[31m
+          [33mclass[31m=[32m"nlp-form"[31m
+        [36m>[31m
+          [36m<input[31m
+            [33mclass[31m=[32m"form-input nlp-input"[31m
+            [33mplaceholder[31m=[32m"e.g. Schedule database mid-term prep for 90 mins next Wednesday. Mark it high priority, tags: dbms, college."[31m
+            [33mtype[31m=[32m"text"[31m
+            [33mvalue[31m=[32m""[31m
+          [36m/>[31m
+          [36m<button[31m
+            [33mclass[31m=[32m"btn-primary nlp-btn"[31m
+            [33mdisabled[31m=[32m""[31m
+            [33mtype[31m=[32m"submit"[31m
+          [36m>[31m
+            [0mAnalyze[0m
+          [36m</button>[31m
+        [36m</form>[31m
+      [36m</div>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"tasks-layout-split"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"tasks-list-panel glass-card"[31m
+        [36m>[31m
+          [36m<h3[31m
+            [33mclass[31m=[32m"section-title"[31m
+          [36m>[31m
+            [0mTask Backlog[0m
+          [36m</h3>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"list-empty"[31m
+          [36m>[31m
+            [0mNo active tasks in your backlog. Create one or prompt AI above![0m
+          [36m</div>[31m
+        [36m</div>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"task-creator-panel glass-card"[31m
+        [36m>[31m
+          [36m<h3[31m
+            [33mclass[31m=[32m"section-title"[31m
+          [36m>[31m
+            [0mNew Task[0m
+          [36m</h3>[31m
+          [36m<form[31m
+            [33mclass[31m=[32m"creator-form"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"field-group"[31m
+            [36m>[31m
+              [36m<label>[31m
+                [0mTask Title[0m
+              [36m</label>[31m
+              [36m<input[31m
+                [33mclass[31m=[32m"form-input"[31m
+                [33mplaceholder[31m=[32m"Database assignment..."[31m
+                [33mrequired[31m=[32m""[31m
+                [33mtype[31m=[32m"text"[31m
+                [33mvalue[31m=[32m""[31m
+              [36m/>[31m
+            [36m</div>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"field-group"[31m
+            [36m>[31m
+              [36m<label>[31m
+                [0mDescription[0m
+              [36m</label>[31m
+              [36m<textarea[31m
+                [33mclass[31m=[32m"form-input"[31m
+                [33mplaceholder[31m=[32m"Practice normalization and SQL indexing..."[31m
+              [36m/>[31m
+            [36m</div>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"form-row"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"field-group flex-1"[31m
+              [36m>[31m
+                [36m<label>[31m
+                  [0mPriority[0m
+                [36m</label>[31m
+                [36m<select[31m
+                  [33mclass[31m=[32m"form-input"[31m
+                [36m>[31m
+                  [36m<option[31m
+                    [33mvalue[31m=[32m"low"[31m
+                  [36m>[31m
+                    [0mLow[0m
+                  [36m</option>[31m
+                  [36m<option[31m
+                    [33mvalue[31m=[32m"medium"[31m
+                  [36m>[31m
+                    [0mMedium[0m
+                  [36m</option>[31m
+                  [36m<option[31m
+                    [33mvalue[31m=[32m"high"[31m
+                  [36m>[31m
+                    [0mHigh[0m
+                  [36m</option>[31m
+                  [36m<option[31m
+                    [33mvalue[31m=[32m"urgent"[31m
+                  [36m>[31m
+                    [0mUrgent[0m
+                  [36m</option>[31m
+                [36m</select>[31m
+              [36m</div>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"field-group flex-1"[31m
+              [36m>[31m
+                [36m<label>[31m
+                  [0mMinutes[0m
+                [36m</label>[31m
+                [36m<input[31m
+                  [33mclass[31m=[32m"form-input"[31m
+                  [33mmax[31m=[32m"240"[31m
+                  [33mmin[31m=[32m"5"[31m
+                  [33mtype[31m=[32m"number"[31m
+                  [33mvalue[31m=[32m"30"[31m
+                [36m/>[31m
+              [36m</div>[31m
+            [36m</div>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"form-row"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"field-group flex-1"[31m
+              [36m>[31m
+                [36m<label>[31m
+                  [0mCategory[0m
+                [36m</label>[31m
+                [36m<input[31m
+                  [33mclass[31m=[32m"form-input"[31m
+                  [33mplaceholder[31m=[32m"e.g. Work, College"[31m
+                  [33mtype[31m=[32m"text"[31m
+                  [33mvalue[31m=[32m"Work"[31m
+                [36m/>[31m
+              [36m</div>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"field-group flex-1"[31m
+              [36m>[31m
+                [36m<label>[31m
+                  [0mTags (comma separated)[0m
+                [36m</label>[31m
+                [36m<input[31m
+                  [33mclass[31m=[32m"form-input"[31m
+                  [33mplaceholder[31m=[32m"sql, study"[31m
+                  [33mtype[31m=[32m"text"[31m
+                  [33mvalue[31m=[32m""[31m
+                [36m/>[31m
+              [36m</div>[31m
+            [36m</div>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"btn-primary submit-creator-btn"[31m
+              [33mtype[31m=[32m"submit"[31m
+            [36m>[31m
+              [36m<svg[31m
+                [33maria-hidden[31m=[32m"true"[31m
+                [33mclass[31m=[32m"lucide lucide-plus"[31m
+                [33mfill[31m=[32m"none"[31m
+                [33mheight[31m=[32m"16"[31m
+                [33mstroke[31m=[32m"currentColor"[31m
+                [33mstroke-linecap[31m=[32m"round"[31m
+                [33mstroke-linejoin[31m=[32m"round"[31m
+                [33mstroke-width[31m=[32m"2"[31m
+                [33mviewBox[31m=[32m"0 0 24 24"[31m
+                [33mwidth[31m=[32m"16"[31m
+                [33mxmlns[31m=[32m"http://www.w3.org/2000/svg"[31m
+              [36m>[31m
+                [36m<path[31m
+                  [33md[31m=[32m"M5 12h14"[31m
+                [36m/>[31m
+                [36m<path[31m
+                  [33md[31m=[32m"M12 5v14"[31m
+                [36m/>[31m
+              [36m</svg>[31m
+              [36m<span>[31m
+                [0mCreate Task[0m
+              [36m</span>[31m
+            [36m</button>[31m
+          [36m</form>[31m
+        [36m</div>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+ [31m❯[39m src/tests/meetings/MeetingsView.test.tsx [2m([22m[2m4 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 260[2mms[22m[39m
+   [32m✓[39m MeetingsView[2m > [22mrenders initial state correctly[32m 14[2mms[22m[39m
+   [32m✓[39m MeetingsView[2m > [22mprocesses transcript successfully[32m 41[2mms[22m[39m
+   [32m✓[39m MeetingsView[2m > [22mhandles drag-and-drop file upload[32m 21[2mms[22m[39m
+[31m   [31m×[31m MeetingsView[2m > [22mallows converting action items to tasks[39m[32m 185[2mms[22m[39m
+[31m     → Unable to find an accessible element with the role "button" and name `/Convert to Task/i`
+
+Here are the accessible roles:
+
+  heading:
+
+  Name "Meeting Scribe":
+  [36m<h3[31m
+    [33mclass[31m=[32m"section-title"[31m
+  [36m/>[31m
+
+  Name "AI Summary & Action Items":
+  [36m<h3[31m
+    [33mclass[31m=[32m"section-title"[31m
+  [36m/>[31m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[31m
+
+  --------------------------------------------------
+  textbox:
+
+  Name "":
+  [36m<textarea[31m
+    [33mclass[31m=[32m"form-input transcript-textarea"[31m
+    [33mplaceholder[31m=[32m"Paste meeting transcript lines or summary notes here..."[31m
+    [33mrequired[31m=[32m""[31m
+  [36m/>[31m
+
+  --------------------------------------------------
+  button:
+
+  Name "Extract Decisions & Action Items":
+  [36m<button[31m
+    [33mclass[31m=[32m"btn-primary process-btn"[31m
+    [33mtype[31m=[32m"submit"[31m
+  [36m/>[31m
+
+  Name "Sync Tasks":
+  [36m<button[31m
+    [33mclass[31m=[32m"btn-primary convert-btn"[31m
+  [36m/>[31m
+
+  --------------------------------------------------
+  list:
+
+  Name "":
+  [36m<ul[31m
+    [33mclass[31m=[32m"decisions-list"[31m
+  [36m/>[31m
+
+  --------------------------------------------------
+  listitem:
+
+  Name "":
+  [36m<li[31m
+    [33mclass[31m=[32m"empty-lbl"[31m
+  [36m/>[31m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"meetings-view"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"meetings-split-layout"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"meetings-input-panel glass-card"[31m
+        [36m>[31m
+          [36m<h3[31m
+            [33mclass[31m=[32m"section-title"[31m
+          [36m>[31m
+            [0mMeeting Scribe[0m
+          [36m</h3>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"audio-dropzone  "[31m
+          [36m>[31m
+            [36m<svg[31m
+              [33maria-hidden[31m=[32m"true"[31m
+              [33mclass[31m=[32m"lucide lucide-video dropzone-icon"[31m
+              [33mfill[31m=[32m"none"[31m
+              [33mheight[31m=[32m"32"[31m
+              [33mstroke[31m=[32m"currentColor"[31m
+              [33mstroke-linecap[31m=[32m"round"[31m
+              [33mstroke-linejoin[31m=[32m"round"[31m
+              [33mstroke-width[31m=[32m"2"[31m
+              [33mviewBox[31m=[32m"0 0 24 24"[31m
+              [33mwidth[31m=[32m"32"[31m
+              [33mxmlns[31m=[32m"http://www.w3.org/2000/svg"[31m
+            [36m>[31m
+              [36m<path[31m
+                [33md[31m=[32m"m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"[31m
+              [36m/>[31m
+              [36m<rect[31m
+                [33mheight[31m=[32m"12"[31m
+                [33mrx[31m=[32m"2"[31m
+                [33mwidth[31m=[32m"14"[31m
+                [33mx[31m=[32m"2"[31m
+                [33my[31m=[32m"6"[31m
+              [36m/>[31m
+            [36m</svg>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"dropzone-text"[31m
+            [36m>[31m
+              [36m<p>[31m
+                [0mDrag and drop meeting audio (MP3, WAV) here[0m
+              [36m</p>[31m
+              [36m<span>[31m
+                [0mor[0m
+              [36m</span>[31m
+              [36m<label[31m
+                [33mclass[31m=[32m"file-select-label"[31m
+              [36m>[31m
+                [0mBrowse Files[0m
+                [36m<input[31m
+                  [33maccept[31m=[32m"audio/*"[31m
+                  [33mstyle[31m=[32m"display: none;"[31m
+                  [33mtype[31m=[32m"file"[31m
+                [36m/>[31m
+              [36m</label>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+          [36m<form[31m
+            [33mclass[31m=[32m"transcript-form"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"field-group"[31m
+            [36m>[31m
+              [36m<label>[31m
+                [0mTranscript or Notes[0m
+              [36m</label>[31m
+              [36m<textarea[31m
+                [33mclass[31m=[32m"form-input transcript-textarea"[31m
+                [33mplaceholder[31m=[32m"Paste meeting transcript lines or summary notes here..."[31m
+                [33mrequired[31m=[32m""[31m
+              [36m>[31m
+                [0mAlex: Implement Firestore[0m
+              [36m</textarea>[31m
+            [36m</div>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"btn-primary process-btn"[31m
+              [33mtype[31m=[32m"submit"[31m
+            [36m>[31m
+              [36m<svg[31m
+                [33maria-hidden[31m=[32m"true"[31m
+                [33mclass[31m=[32m"lucide lucide-sparkles"[31m
+                [33mfill[31m=[32m"none"[31m
+                [33mheight[31m=[32m"14"[31m
+                [33mstroke[31m=[32m"currentColor"[31m
+                [33mstroke-linecap[31m=[32m"round"[31m
+                [33mstroke-linejoin[31m=[32m"round"[31m
+                [33mstroke-width[31m=[32m"2"[31m
+                [33mviewBox[31m=[32m"0 0 24 24"[31m
+                [33mwidth[31m=[32m"14"[31m
+                [33mxmlns[31m=[32m"http://www.w3.org/2000/svg"[31m
+              [36m>[31m
+                [36m<path[31m
+                  [33md[31m=[32m"M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"[31m
+                [36m/>[31m
+                [36m<path[31m
+                  [33md[31m=[32m"M20 2v4"[31m
+                [36m/>[31m
+                [36m<path[31m
+                  [33md[31m=[32m"M22 4h-4"[31m
+                [36m/>[31m
+                [36m<circle[31m
+                  [33mcx[31m=[32m"4"[31m
+                  [33mcy[31m=[32m"20"[31m
+                  [33mr[31m=[32m"2"[31m
+                [36m/>[31m
+              [36m</svg>[31m
+              [36m<span>[31m
+                [0mExtract Decisions & Action Items[0m
+              [36m</span>[31m
+            [36m</button>[31m
+          [36m</form>[31m
+        [36m</div>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"meetings-results-panel glass-card"[31m
+        [36m>[31m
+          [36m<h3[31m
+            [33mclass[31m=[32m"section-title"[31m
+          [36m>[31m
+            [0mAI Summary & Action Items[0m
+          [36m</h3>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"scribe-results-content"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"result-section"[31m
+            [36m>[31m
+              [36m<span[31m
+                [33mclass[31m=[32m"result-section-lbl"[31m
+              [36m>[31m
+                [0mBrief Summary[0m
+              [36m</span>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"summary-bubble glass-card"[31m
+              [36m>[31m
+                [0mAPI schemas finalizing.[0m
+              [36m</div>[31m
+            [36m</div>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"result-section"[31m
+            [36m>[31m
+              [36m<span[31m
+                [33mclass[31m=[32m"result-section-lbl"[31m
+              [36m>[31m
+                [0mDecisions Made[0m
+              [36m</span>[31m
+              [36m<ul[31m
+                [33mclass[31m=[32m"decisions-list"[31m
+              [36m>[31m
+                [36m<li[31m
+                  [33mclass[31m=[32m"empty-lbl"[31m
+                [36m>[31m
+                  [0mNo explicit decisions resolved.[0m
+                [36m</li>[31m
+              [36m</ul>[31m
+            [36m</div>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"result-section"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"action-items-header"[31m
+              [36m>[31m
+                [36m<span[31m
+                  [33mclass[31m=[32m"result-section-lbl"[31m
+                [36m>[31m
+                  [0mAction Items[0m
+                [36m</span>[31m
+                [36m<button[31m
+                  [33mclass[31m=[32m"btn-primary convert-btn"[31m
+                [36m>[31m
+                  [36m<svg[31m
+                    [33maria-hidden[31m=[32m"true"[31m
+                    [33mclass[31m=[32m"lucide lucide-square-check-big"[31m
+                    [33mfill[31m=[32m"none"[31m
+                    [33mheight[31m=[32m"12"[31m
+                    [33mstroke[31m=[32m"currentColor"[31m
+                    [33mstroke-linecap[31m=[32m"round"[31m
+                    [33mstroke-linejoin[31m=[32m"round"[31m
+                    [33mstroke-width[31m=[32m"2"[31m
+                    [33mviewBox[31m=[32m"0 0 24 24"[31m
+                    [33mwidth[31m=[32m"12"[31m
+                    [33mxmlns[31m=[32m"http://www.w3.org/2000/svg"[31m
+                  [36m>[31m
+                    [36m<path[31m
+                      [33md[31m=[32m"M21 10.656V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12.344"[31m
+                    [36m/>[31m
+                    [36m<path[31m
+                      [33md[31m=[32m"m9 11 3 3L22 4"[31m
+                    [36m/>[31m
+                  [36m</svg>[31m
+                  [36m<span>[31m
+                    [0mSync Tasks[0m
+                  [36m</span>[31m
+                [36m</button>[31m
+              [36m</div>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"action-items-list"[31m
+              [36m>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"action-item-card glass-card"[31m
+                [36m>[31m
+                  [36m<div[31m
+                    [33mclass[31m=[32m"action-title"[31m
+                  [36m>[31m
+                    [0mImplement Firestore[0m
+                  [36m</div>[31m
+                  [36m<div[31m
+                    [33mclass[31m=[32m"action-meta"[31m
+                  [36m>[31m
+                    [36m<span[31m
+                      [33mclass[31m=[32m"assignee-badge"[31m
+                    [36m>[31m
+                      [0mAssignee: [0m
+                      [0mAlex[0m
+                    [36m</span>[31m
+                    [36m<span[31m
+                      [33mclass[31m=[32m"est-badge"[31m
+                    [36m>[31m
+                      [0m60[0m
+                      [0m mins[0m
+                    [36m</span>[31m
+                  [36m</div>[31m
+                [36m</div>[31m
+              [36m</div>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+ [31m❯[39m src/tests/workflows/WorkflowsView.test.tsx [2m([22m[2m3 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 127[2mms[22m[39m
+   [32m✓[39m WorkflowsView[2m > [22mrenders loading state initially[32m 12[2mms[22m[39m
+   [32m✓[39m WorkflowsView[2m > [22mrenders workflow nodes and runs workflow[32m 78[2mms[22m[39m
+[31m   [31m×[31m WorkflowsView[2m > [22mallows appending a new trigger node to the canvas[39m[32m 38[2mms[22m[39m
+[31m     → Found a label with the text of: Node Category, however no form control was found associated to that label. Make sure you're using the "for" attribute or "aria-labelledby" attribute correctly.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"workflows-view"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"workflows-top-bar glass-panel"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"bar-left"[31m
+        [36m>[31m
+          [36m<svg[31m
+            [33maria-hidden[31m=[32m"true"[31m
+            [33mclass[31m=[32m"lucide lucide-git-branch bar-icon"[31m
+            [33mfill[31m=[32m"none"[31m
+            [33mheight[31m=[32m"18"[31m
+            [33mstroke[31m=[32m"currentColor"[31m
+            [33mstroke-linecap[31m=[32m"round"[31m
+            [33mstroke-linejoin[31m=[32m"round"[31m
+            [33mstroke-width[31m=[32m"2"[31m
+            [33mviewBox[31m=[32m"0 0 24 24"[31m
+            [33mwidth[31m=[32m"18"[31m
+            [33mxmlns[31m=[32m"http://www.w3.org/2000/svg"[31m
+          [36m>[31m
+            [36m<path[31m
+              [33md[31m=[32m"M15 6a9 9 0 0 0-9 9V3"[31m
+            [36m/>[31m
+            [36m<circle[31m
+              [33mcx[31m=[32m"18"[31m
+              [33mcy[31m=[32m"6"[31m
+              [33mr[31m=[32m"3"[31m
+            [36m/>[31m
+            [36m<circle[31m
+              [33mcx[31m=[32m"6"[31m
+              [33mcy[31m=[32m"18"[31m
+              [33mr[31m=[32m"3"[31m
+            [36m/>[31m
+          [36m</svg>[31m
+          [36m<select[31m
+            [33mclass[31m=[32m"form-input workflow-selector"[31m
+          [36m>[31m
+            [36m<option[31m
+              [33mdisabled[31m=[32m""[31m
+              [33mvalue[31m=[32m""[31m
+            [36m>[31m
+              [0m-- Select Automation --[0m
+            [36m</option>[31m
+            [36m<option[31m
+              [33mvalue[31m=[32m"wf-1"[31m
+            [36m>[31m
+              [0mWeekly Task Sync[0m
+            [36m</option>[31m
+          [36m</select>[31m
+        [36m</div>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"bar-right"[31m
+        [36m>[31m
+          [36m<button[31m
+            [33mclass[31m=[32m"btn-primary run-flow-btn"[31m
+          [36m>[31m
+            [36m<svg[31m
+              [33maria-hidden[31m=[32m"true"[31m
+              [33mclass[31m=[32m"lucide lucide-play"[31m
+              [33mfill[31m=[32m"none"[31m
+              [33mheight[31m=[32m"14"[31m
+              [33mstroke[31m=[32m"currentColor"[31m
+              [33mstroke-linecap[31m=[32m"round"[31m
+              [33mstroke-linejoin[31m=[32m"round"[31m
+              [33mstroke-width[31m=[32m"2"[31m
+              [33mviewBox[31m=[32m"0 0 24 24"[31m
+              [33mwidth[31m=[32m"14"[31m
+              [33mxmlns[31m=[32m"http://www.w3.org/2000/svg"[31m
+            [36m>[31m
+              [36m<path[31m
+                [33md[31m=[32m"M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"[31m
+              [36m/>[31m
+            [36m</svg>[31m
+            [36m<span>[31m
+              [0mRun Automation[0m
+            [36m</span>[31m
+          [36m</button>[31m
+          [36m<button[31m
+            [33mclass[31m=[32m"btn-secondary"[31m
+            [33mstyle[31m=[32m"padding: 8px 10px; display: flex; align-items: center; justify-content: center;"[31m
+            [33mtitle[31m=[32m"Delete Automation"[31m
+          [36m>[31m
+            [36m<svg[31m
+              [33maria-hidden[31m=[32m"true"[31m
+              [33mclass[31m=[32m"lucide lucide-trash2 lucide-trash-2"[31m
+              [33mfill[31m=[32m"none"[31m
+              [33mheight[31m=[32m"14"[31m
+              [33mstroke[31m=[32m"currentColor"[31m
+              [33mstroke-linecap[31m=[32m"round"[31m
+              [33mstroke-linejoin[31m=[32m"round"[31m
+              [33mstroke-width[31m=[32m"2"[31m
+              [33mviewBox[31m=[32m"0 0 24 24"[31m
+              [33mwidth[31m=[32m"14"[31m
+              [33mxmlns[31m=[32m"http://www.w3.org/2000/svg"[31m
+            [36m>[31m
+              [36m<path[31m
+                [33md[31m=[32m"M10 11v6"[31m
+              [36m/>[31m
+              [36m<path[31m
+                [33md[31m=[32m"M14 11v6"[31m
+              [36m/>[31m
+              [36m<path[31m
+                [33md[31m=[32m"M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"[31m
+              [36m/>[31m
+              [36m<path[31m
+                [33md[31m=[32m"M3 6h18"[31m
+              [36m/>[31m
+              [36m<path[31m
+                [33md[31m=[32m"M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"[31m
+              [36m/>[31m
+            [36m</svg>[31m
+          [36m</button>[31m
+          [36m<button[31m
+            [33mclass[31m=[32m"btn-secondary"[31m
+          [36m>[31m
+            [0mAdd Template[0m
+          [36m</button>[31m
+        [36m</div>[31m
+      [36m</div>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"workflows-split-layout"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"node-canvas-panel glass-card"[31m
+        [36m>[31m
+          [36m<h3[31m
+            [33mclass[31m=[32m"section-title"[31m
+          [36m>[31m
+            [0mAutomation Canvas[0m
+          [36m</h3>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"canvas-grid"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"canvas-nodes-container"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"node-card-block trigger"[31m
+              [36m>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"node-badge-lbl"[31m
+                [36m>[31m
+                  [0mtrigger[0m
+                [36m</div>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"node-title-desc"[31m
+                [36m>[31m
+                  [36m<strong>[31m
+                    [0mEvent Trigger:[0m
+                  [36m</strong>[31m
+                  [36m<span>[31m
+                    [0mon_new_task[0m
+                  [36m</span>[31m
+                [36m</div>[31m
+              [36m</div>[31m
+            [36m</div>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"node-editor-form glass-card"[31m
+            [36m>[31m
+              [36m<span[31m
+                [33mclass[31m=[32m"details-subheading"[31m
+              [36m>[31m
+                [0mAppend Canvas Node[0m
+              [36m</span>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"form-row"[31m
+              [36m>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"field-group flex-1"[31m
+                [36m>[31m
+                  [36m<label>[31m
+                    [0mNode Category[0m
+                  [36m</label>[31m
+                  [36m<select[31m
+                    [33mclass[31m=[32m"form-input"[31m
+                  [36m>[31m
+                    [36m<option[31m
+                      [33mvalue[31m=[32m"trigger"[31m
+                    [36m>[31m
+                      [0mTrigger[0m
+                    [36m</option>[31m
+                    [36m<option[31m
+                      [33mvalue[31m=[32m"action"[31m
+                    [36m>[31m
+                      [0mAction[0m
+                    [36m</option>[31m
+                  [36m</select>[31m
+                [36m</div>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"field-group flex-1"[31m
+                [36m>[31m
+                  [36m<label>[31m
+                    [0mEvent Name[0m
+                  [36m</label>[31m
+                  [36m<select[31m
+                    [33mclass[31m=[32m"form-input"[31m
+                  [36m>[31m
+                    [36m<option[31m
+                      [33mvalue[31m=[32m"on_new_task"[31m
+                    [36m>[31m
+                      [0mOn New Task[0m
+                    [36m</option>[31m
+                    [36m<option[31m
+                      [33mvalue[31m=[32m"on_meeting_end"[31m
+                    [36m>[31m
+                      [0mOn Meeting Complete[0m
+                    [36m</option>[31m
+                    [36m<option[31m
+                      [33mvalue[31m=[32m"on_burnout_alert"[31m
+                    [36m>[31m
+                      [0mOn Burnout Danger[0m
+                    [36m</option>[31m
+                  [36m</select>[31m
+                [36m</div>[31m
+              [36m</div>[31m
+              [36m<button[31m
+                [33mclass[31m=[32m"btn-primary append-node-btn"[31m
+              [36m>[31m
+                [36m<svg[31m
+                  [33maria-hidden[31m=[32m"true"[31m
+                  [33mclass[31m=[32m"lucide lucide-plus"[31m
+                  [33mfill[31m=[32m"none"[31m
+                  [33mheight[31m=[32m"14"[31m
+                  [33mstroke[31m=[32m"currentColor"[31m
+                  [33mstroke-linecap[31m=[32m"round"[31m
+                  [33mstroke-linejoin[31m=[32m"round"[31m
+                  [33mstroke-width[31m=[32m"2"[31m
+                  [33mviewBox[31m=[32m"0 0 24 24"[31m
+                  [33mwidth[31m=[32m"14"[31m
+                  [33mxmlns[31m=[32m"http://www.w3.org/2000/svg"[31m
+                [36m>[31m
+                  [36m<path[31m
+                    [33md[31m=[32m"M5 12h14"[31m
+                  [36m/>[31m
+                  [36m<path[31m
+                    [33md[31m=[32m"M12 5v14"[31m
+                  [36m/>[31m
+                [36m</svg>[31m
+                [36m<span>[31m
+                  [0mAppend Node[0m
+                [36m</span>[31m
+              [36m</button>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"execution-logs-panel glass-card"[31m
+        [36m>[31m
+          [36m<h3[31m
+            [33mclass[31m=[32m"section-title"[31m
+          [36m>[31m
+            [0mExecution Console[0m
+          [36m</h3>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"console-placeholder"[31m
+          [36m>[31m
+            [36m<svg[31m
+              [33maria-hidden[31m=[32m"true"[31m
+              [33mclass[31m=[32m"lucide lucide-circle-alert info-icon"[31m
+              [33mfill[31m=[32m"none"[31m
+              [33mheight[31m=[32m"20"[31m
+              [33mstroke[31m=[32m"currentColor"[31m
+              [33mstroke-linecap[31m=[32m"round"[31m
+              [33mstroke-linejoin[31m=[32m"round"[31m
+              [33mstroke-width[31m=[32m"2"[31m
+              [33mviewBox[31m=[32m"0 0 24 24"[31m
+              [33mwidth[31m=[32m"20"[31m
+              [33mxmlns[31m=[32m"http://www.w3.org/2000/svg"[31m
+            [36m>[31m
+              [36m<circle[31m
+                [33mcx[31m=[32m"12"[31m
+                [33mcy[31m=[32m"12"[31m
+                [33mr[31m=[32m"10"[31m
+              [36m/>[31m
+              [36m<line[31m
+                [33mx1[31m=[32m"12"[31m
+                [33mx2[31m=[32m"12"[31m
+                [33my1[31m=[32m"8"[31m
+                [33my2[31m=[32m"12"[31m
+              [36m/>[31m
+              [36m<line[31m
+                [33mx1[31m=[32m"12"[31m
+                [33mx2[31m=[32m"12.01"[31m
+                [33my1[31m=[32m"16"[31m
+                [33my2[31m=[32m"16"[31m
+              [36m/>[31m
+            [36m</svg>[31m
+            [36m<p>[31m
+              [0mPress "Run Automation" to verify background trigger logs.[0m
+            [36m</p>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+ [32m✓[39m src/tests/calendar/CalendarView.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 168[2mms[22m[39m
+ [32m✓[39m src/tests/auth/AuthView.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 123[2mms[22m[39m
+ [32m✓[39m src/tests/copilot/CopilotPanel.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 218[2mms[22m[39m
+ [32m✓[39m src/tests/settings/SettingsView.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 103[2mms[22m[39m
+[90mstderr[2m | src/tests/dashboard/DashboardView.test.tsx[2m > [22m[2mDashboardView[2m > [22m[2mfetches and renders insights data
+[22m[39mThe tag <stop> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter.
+<linearGradient /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+The tag <linearGradient> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter.
+The tag <defs> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter.
+
+ [32m✓[39m src/tests/dashboard/DashboardView.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 117[2mms[22m[39m
+ [32m✓[39m src/tests/layout/Layout.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 112[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 8 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m src/tests/documents/DocumentsView.test.tsx[2m > [22mDocumentsView[2m > [22mallows uploading a new document
+[31m[1mAssertionError[22m[39m: expected "spy" to be called with arguments: [ …(2) ][90m
+
+Received: 
+
+[1m  1st spy call:
+
+[22m[2m  [[22m
+[2m    "http://localhost:8000/api/v1/documents",[22m
+[32m-   ObjectContaining {[90m
+[32m-     "method": "POST",[90m
+[31m+   {[90m
+[31m+     "headers": {[90m
+[31m+       "Authorization": "Bearer mock-token",[90m
+[31m+     },[90m
+[2m    },[22m
+[2m  ][22m
+
+[1m  2nd spy call:
+
+[22m[2m  [[22m
+[32m-   "http://localhost:8000/api/v1/documents",[90m
+[32m-   ObjectContaining {[90m
+[31m+   "http://localhost:8000/api/v1/documents/upload-text",[90m
+[31m+   {[90m
+[31m+     "body": "{\"title\":\"Biology Notes\",\"text\":\"Photosynthesis is the process...\"}",[90m
+[31m+     "headers": {[90m
+[31m+       "Authorization": "Bearer mock-token",[90m
+[31m+       "Content-Type": "application/json",[90m
+[31m+     },[90m
+[2m      "method": "POST",[22m
+[2m    },[22m
+[2m  ][22m
+
+[1m  3rd spy call:
+
+[22m[2m  [[22m
+[2m    "http://localhost:8000/api/v1/documents",[22m
+[32m-   ObjectContaining {[90m
+[32m-     "method": "POST",[90m
+[31m+   {[90m
+[31m+     "headers": {[90m
+[31m+       "Authorization": "Bearer mock-token",[90m
+[31m+     },[90m
+[2m    },[22m
+[2m  ][22m
+[39m[90m
+
+Number of calls: [1m3[22m
+[39m
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"documents-view"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"documents-grid-split"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"document-manager-panel glass-card"[39m
+          [36m>[39m
+            [36m<h3[39m
+              [33mclass[39m=[32m"section-title"[39m
+            [36m>[39m
+              [0mStudy Library[0m
+            [36m</h3>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"doc-selector-block"[39m
+            [36m>[39m
+              [36m<label>[39m
+                [0mSelect Workspace Document[0m
+              [36m</label>[39m
+              [36m<select[39m
+                [33mclass[39m=[32m"form-input doc-select"[39m
+              [36m>[39m
+                [36m<option[39m
+                  [33mdisabled[39m=[32m""[39m
+                  [33mvalue[39m=[32m""[39m
+                [36m>[39m
+                  [0m-- Choose Document --[0m
+                [36m</option>[39m
+                [36m<option[39m
+                  [33mvalue[39m=[32m"doc-2"[39m
+                [36m>[39m
+                  [0mBiology Notes[0m
+                  [0m ([0m
+                  [0m500[0m
+                  [0m words)[0m
+                [36m</option>[39m
+              [36m</select>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"analysis-buttons-grid"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"btn-secondary analysis-btn"[39m
+              [36m>[39m
+                [0mSummarize[0m
+              [36m</button>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"btn-secondary analysis-btn"[39m
+              [36m>[39m
+                [0mGenerate Flashcards[0m
+              [36m</button>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"btn-secondary analysis-btn"[39m
+              [36m>[39m
+                [0mGenerate Quiz[0m
+              [36m</button>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"divider-line"[39m
+            [36m/>[39m
+            [36m<form[39m
+              [33mclass[39m=[32m"uploader-form"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"details-subheading"[39m
+              [36m>[39m
+                [0mSubmit Reference Material[0m
+              [36m</span>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"field-group"[39m
+              [36m>[39m
+                [36m<input[39m
+                  [33mclass[39m=[32m"form-input"[39m
+                  [33mplaceholder[39m=[32m"Topic Title (e.g. DBMS Normalization)"[39m
+                  [33mrequired[39m=[32m""[39m
+                  [33mtype[39m=[32m"text"[39m
+                  [33mvalue[39m=[32m""[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"field-group"[39m
+              [36m>[39m
+                [36m<textarea[39m
+                  [33mclass[39m=[32m"form-input doc-textarea"[39m
+                  [33mplaceholder[39m=[32m"Paste study material text content here..."[39m
+                  [33mrequired[39m=[32m""[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"btn-primary upload-doc-btn"[39m
+                [33mtype[39m=[32m"submit"[39m
+              [36m>[39m
+                [0mSave reference[0m
+              [36m</button>[39m
+            [36m</form>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"document-tools-panel glass-card"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"tools-tabs"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"tool-tab-btn active"[39m
+              [36m>[39m
+                [0mSummary[0m
+              [36m</button>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"tool-tab-btn "[39m
+              [36m>[39m
+                [0mFlashcards[0m
+              [36m</button>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"tool-tab-btn "[39m
+              [36m>[39m
+                [0mPractice Quiz[0m
+              [36m</button>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"tool-tab-btn "[39m
+              [36m>[39m
+                [0mAsk PDF (RAG)[0m
+              [36m</button>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"tool-content-area"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"summary-tab-content"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"tool-tab-placeholder"[39m
+                [36m>[39m
+                  [36m<svg[39m
+                    [33maria-hidden[39m=[32m"true"[39m
+                    [33mclass[39m=[32m"lucide lucide-file-text place-icon"[39m
+                    [33mfill[39m=[32m"none"[39m
+                    [33mheight[39m=[32m"32"[39m
+                    [33mstroke[39m=[32m"currentColor"[39m
+                    [33mstroke-linecap[39m=[32m"round"[39m
+                    [33mstroke-linejoin[39m=[32m"round"[39m
+                    [33mstroke-width[39m=[32m"2"[39m
+                    [33mviewBox[39m=[32m"0 0 24 24"[39m
+                    [33mwidth[39m=[32m"32"[39m
+                    [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                  [36m>[39m
+                    [36m<path[39m
+                      [33md[39m=[32m"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"[39m
+                    [36m/>[39m
+                    [36m<path[39m
+                      [33md[39m=[32m"M14 2v5a1 1 0 0 0 1 1h5"[39m
+                    [36m/>[39m
+                    [36m<path[39m
+                      [33md[39m=[32m"M10 9H8"[39m
+                    [36m/>[39m
+                    [36m<path[39m
+                      [33md[39m=[32m"M16 13H8"[39m
+                    [36m/>[39m
+                    [36m<path[39m
+                      [33md[39m=[32m"M16 17H8"[39m
+                    [36m/>[39m
+                  [36m</svg>[39m
+                  [36m<p>[39m
+                    [0mNo summary compiled. Select a document on the left and click "Summarize".[0m
+                  [36m</p>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</body>[39m
+[36m</html>[39m
+[36m [2m❯[22m src/tests/documents/DocumentsView.test.tsx:[2m58:28[22m[39m
+    [90m 56| [39m
+    [90m 57| [39m    [35mawait[39m [34mwaitFor[39m(() [33m=>[39m {
+    [90m 58| [39m      expect(global.fetch).toHaveBeenCalledWith(`${apiBaseUrl}/documen…
+    [90m   | [39m                           [31m^[39m
+    [90m 59| [39m        method[33m:[39m [32m'POST'[39m
+    [90m 60| [39m      }))[33m;[39m
+[90m [2m❯[22m runWithExpensiveErrorDiagnosticsDisabled node_modules/@testing-library/dom/dist/config.js:[2m47:12[22m[39m
+[90m [2m❯[22m checkCallback node_modules/@testing-library/dom/dist/wait-for.js:[2m124:77[22m[39m
+[90m [2m❯[22m Timeout.checkRealTimersCallback node_modules/@testing-library/dom/dist/wait-for.js:[2m118:16[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/8]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/tests/documents/DocumentsView.test.tsx[2m > [22mDocumentsView[2m > [22mallows analyzing a selected document for summary
+[31m[1mTestingLibraryElementError[22m[39m: Found a label with the text of: /Select Workspace Document/i, however no form control was found associated to that label. Make sure you're using the "for" attribute or "aria-labelledby" attribute correctly.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"documents-view"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"documents-grid-split"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"document-manager-panel glass-card"[39m
+        [36m>[39m
+          [36m<h3[39m
+            [33mclass[39m=[32m"section-title"[39m
+          [36m>[39m
+            [0mStudy Library[0m
+          [36m</h3>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"doc-selector-block"[39m
+          [36m>[39m
+            [36m<label>[39m
+              [0mSelect Workspace Document[0m
+            [36m</label>[39m
+            [36m<select[39m
+              [33mclass[39m=[32m"form-input doc-select"[39m
+            [36m>[39m
+              [36m<option[39m
+                [33mdisabled[39m=[32m""[39m
+                [33mvalue[39m=[32m""[39m
+              [36m>[39m
+                [0m-- Choose Document --[0m
+              [36m</option>[39m
+              [36m<option[39m
+                [33mvalue[39m=[32m"doc-1"[39m
+              [36m>[39m
+                [0mCalculus Notes[0m
+                [0m ([0m
+                [0m1000[0m
+                [0m words)[0m
+              [36m</option>[39m
+            [36m</select>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"analysis-buttons-grid"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn-secondary analysis-btn"[39m
+            [36m>[39m
+              [0mSummarize[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn-secondary analysis-btn"[39m
+            [36m>[39m
+              [0mGenerate Flashcards[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn-secondary analysis-btn"[39m
+            [36m>[39m
+              [0mGenerate Quiz[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"divider-line"[39m
+          [36m/>[39m
+          [36m<form[39m
+            [33mclass[39m=[32m"uploader-form"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"details-subheading"[39m
+            [36m>[39m
+              [0mSubmit Reference Material[0m
+            [36m</span>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"field-group"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-input"[39m
+                [33mplaceholder[39m=[32m"Topic Title (e.g. DBMS Normalization)"[39m
+                [33mrequired[39m=[32m""[39m
+                [33mtype[39m=[32m"text"[39m
+                [33mvalue[39m=[32m""[39m
+              [36m/>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"field-group"[39m
+            [36m>[39m
+              [36m<textarea[39m
+                [33mclass[39m=[32m"form-input doc-textarea"[39m
+                [33mplaceholder[39m=[32m"Paste study material text content here..."[39m
+                [33mrequired[39m=[32m""[39m
+              [36m/>[39m
+            [36m</div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn-primary upload-doc-btn"[39m
+              [33mtype[39m=[32m"submit"[39m
+            [36m>[39m
+              [0mSave reference[0m
+            [36m</button>[39m
+          [36m</form>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"document-tools-panel glass-card"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"tools-tabs"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"tool-tab-btn active"[39m
+            [36m>[39m
+              [0mSummary[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"tool-tab-btn "[39m
+            [36m>[39m
+              [0mFlashcards[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"tool-tab-btn "[39m
+            [36m>[39m
+              [0mPractice Quiz[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"tool-tab-btn "[39m
+            [36m>[39m
+              [0mAsk PDF (RAG)[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"tool-content-area"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"summary-tab-content"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"tool-tab-placeholder"[39m
+              [36m>[39m
+                [36m<svg[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33mclass[39m=[32m"lucide lucide-file-text place-icon"[39m
+                  [33mfill[39m=[32m"none"[39m
+                  [33mheight[39m=[32m"32"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-linecap[39m=[32m"round"[39m
+                  [33mstroke-linejoin[39m=[32m"round"[39m
+                  [33mstroke-width[39m=[32m"2"[39m
+                  [33mviewBox[39m=[32m"0 0 24 24"[39m
+                  [33mwidth[39m=[32m"32"[39m
+                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                [36m>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M14 2v5a1 1 0 0 0 1 1h5"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M10 9H8"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M16 13H8"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M16 17H8"[39m
+                  [36m/>[39m
+                [36m</svg>[39m
+                [36m<p>[39m
+                  [0mNo summary compiled. Select a document on the left and click "Summarize".[0m
+                [36m</p>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+[90m [2m❯[22m Object.getElementError node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m❯[22m getAllByLabelText node_modules/@testing-library/dom/dist/queries/label-text.js:[2m108:40[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m52:17[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m❯[22m src/tests/documents/DocumentsView.test.tsx:[2m85:29[22m[39m
+    [90m 83| [39m
+    [90m 84| [39m    [90m// Select document[39m
+    [90m 85| [39m    fireEvent.change(screen.getByLabelText(/Select Workspace Document/…
+    [90m   | [39m                            [31m^[39m
+    [90m 86| [39m
+    [90m 87| [39m    [90m// Click summarize[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/8]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/tests/documents/DocumentsView.test.tsx[2m > [22mDocumentsView[2m > [22mallows analyzing a selected document for flashcards and interactive playing
+[31m[1mTestingLibraryElementError[22m[39m: Found a label with the text of: /Select Workspace Document/i, however no form control was found associated to that label. Make sure you're using the "for" attribute or "aria-labelledby" attribute correctly.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"documents-view"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"documents-grid-split"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"document-manager-panel glass-card"[39m
+        [36m>[39m
+          [36m<h3[39m
+            [33mclass[39m=[32m"section-title"[39m
+          [36m>[39m
+            [0mStudy Library[0m
+          [36m</h3>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"doc-selector-block"[39m
+          [36m>[39m
+            [36m<label>[39m
+              [0mSelect Workspace Document[0m
+            [36m</label>[39m
+            [36m<select[39m
+              [33mclass[39m=[32m"form-input doc-select"[39m
+            [36m>[39m
+              [36m<option[39m
+                [33mdisabled[39m=[32m""[39m
+                [33mvalue[39m=[32m""[39m
+              [36m>[39m
+                [0m-- Choose Document --[0m
+              [36m</option>[39m
+              [36m<option[39m
+                [33mvalue[39m=[32m"doc-1"[39m
+              [36m>[39m
+                [0mCalculus Notes[0m
+                [0m ([0m
+                [0m1000[0m
+                [0m words)[0m
+              [36m</option>[39m
+            [36m</select>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"analysis-buttons-grid"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn-secondary analysis-btn"[39m
+            [36m>[39m
+              [0mSummarize[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn-secondary analysis-btn"[39m
+            [36m>[39m
+              [0mGenerate Flashcards[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn-secondary analysis-btn"[39m
+            [36m>[39m
+              [0mGenerate Quiz[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"divider-line"[39m
+          [36m/>[39m
+          [36m<form[39m
+            [33mclass[39m=[32m"uploader-form"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"details-subheading"[39m
+            [36m>[39m
+              [0mSubmit Reference Material[0m
+            [36m</span>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"field-group"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-input"[39m
+                [33mplaceholder[39m=[32m"Topic Title (e.g. DBMS Normalization)"[39m
+                [33mrequired[39m=[32m""[39m
+                [33mtype[39m=[32m"text"[39m
+                [33mvalue[39m=[32m""[39m
+              [36m/>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"field-group"[39m
+            [36m>[39m
+              [36m<textarea[39m
+                [33mclass[39m=[32m"form-input doc-textarea"[39m
+                [33mplaceholder[39m=[32m"Paste study material text content here..."[39m
+                [33mrequired[39m=[32m""[39m
+              [36m/>[39m
+            [36m</div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn-primary upload-doc-btn"[39m
+              [33mtype[39m=[32m"submit"[39m
+            [36m>[39m
+              [0mSave reference[0m
+            [36m</button>[39m
+          [36m</form>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"document-tools-panel glass-card"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"tools-tabs"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"tool-tab-btn active"[39m
+            [36m>[39m
+              [0mSummary[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"tool-tab-btn "[39m
+            [36m>[39m
+              [0mFlashcards[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"tool-tab-btn "[39m
+            [36m>[39m
+              [0mPractice Quiz[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"tool-tab-btn "[39m
+            [36m>[39m
+              [0mAsk PDF (RAG)[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"tool-content-area"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"summary-tab-content"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"tool-tab-placeholder"[39m
+              [36m>[39m
+                [36m<svg[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33mclass[39m=[32m"lucide lucide-file-text place-icon"[39m
+                  [33mfill[39m=[32m"none"[39m
+                  [33mheight[39m=[32m"32"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-linecap[39m=[32m"round"[39m
+                  [33mstroke-linejoin[39m=[32m"round"[39m
+                  [33mstroke-width[39m=[32m"2"[39m
+                  [33mviewBox[39m=[32m"0 0 24 24"[39m
+                  [33mwidth[39m=[32m"32"[39m
+                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                [36m>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M14 2v5a1 1 0 0 0 1 1h5"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M10 9H8"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M16 13H8"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M16 17H8"[39m
+                  [36m/>[39m
+                [36m</svg>[39m
+                [36m<p>[39m
+                  [0mNo summary compiled. Select a document on the left and click "Summarize".[0m
+                [36m</p>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+[90m [2m❯[22m Object.getElementError node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m❯[22m getAllByLabelText node_modules/@testing-library/dom/dist/queries/label-text.js:[2m108:40[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m52:17[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m❯[22m src/tests/documents/DocumentsView.test.tsx:[2m120:29[22m[39m
+    [90m118| [39m    })[33m;[39m
+    [90m119| [39m
+    [90m120| [39m    fireEvent.change(screen.getByLabelText(/Select Workspace Document/…
+    [90m   | [39m                            [31m^[39m
+    [90m121| [39m    fireEvent.click(screen.getByRole('button', { name: /Generate Flash…
+    [90m122| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/8]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/tests/documents/DocumentsView.test.tsx[2m > [22mDocumentsView[2m > [22mallows analyzing a selected document for quiz and playing/submitting/resetting quiz
+[31m[1mTestingLibraryElementError[22m[39m: Found a label with the text of: /Select Workspace Document/i, however no form control was found associated to that label. Make sure you're using the "for" attribute or "aria-labelledby" attribute correctly.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"documents-view"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"documents-grid-split"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"document-manager-panel glass-card"[39m
+        [36m>[39m
+          [36m<h3[39m
+            [33mclass[39m=[32m"section-title"[39m
+          [36m>[39m
+            [0mStudy Library[0m
+          [36m</h3>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"doc-selector-block"[39m
+          [36m>[39m
+            [36m<label>[39m
+              [0mSelect Workspace Document[0m
+            [36m</label>[39m
+            [36m<select[39m
+              [33mclass[39m=[32m"form-input doc-select"[39m
+            [36m>[39m
+              [36m<option[39m
+                [33mdisabled[39m=[32m""[39m
+                [33mvalue[39m=[32m""[39m
+              [36m>[39m
+                [0m-- Choose Document --[0m
+              [36m</option>[39m
+              [36m<option[39m
+                [33mvalue[39m=[32m"doc-1"[39m
+              [36m>[39m
+                [0mCalculus Notes[0m
+                [0m ([0m
+                [0m1000[0m
+                [0m words)[0m
+              [36m</option>[39m
+            [36m</select>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"analysis-buttons-grid"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn-secondary analysis-btn"[39m
+            [36m>[39m
+              [0mSummarize[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn-secondary analysis-btn"[39m
+            [36m>[39m
+              [0mGenerate Flashcards[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn-secondary analysis-btn"[39m
+            [36m>[39m
+              [0mGenerate Quiz[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"divider-line"[39m
+          [36m/>[39m
+          [36m<form[39m
+            [33mclass[39m=[32m"uploader-form"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"details-subheading"[39m
+            [36m>[39m
+              [0mSubmit Reference Material[0m
+            [36m</span>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"field-group"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-input"[39m
+                [33mplaceholder[39m=[32m"Topic Title (e.g. DBMS Normalization)"[39m
+                [33mrequired[39m=[32m""[39m
+                [33mtype[39m=[32m"text"[39m
+                [33mvalue[39m=[32m""[39m
+              [36m/>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"field-group"[39m
+            [36m>[39m
+              [36m<textarea[39m
+                [33mclass[39m=[32m"form-input doc-textarea"[39m
+                [33mplaceholder[39m=[32m"Paste study material text content here..."[39m
+                [33mrequired[39m=[32m""[39m
+              [36m/>[39m
+            [36m</div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn-primary upload-doc-btn"[39m
+              [33mtype[39m=[32m"submit"[39m
+            [36m>[39m
+              [0mSave reference[0m
+            [36m</button>[39m
+          [36m</form>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"document-tools-panel glass-card"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"tools-tabs"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"tool-tab-btn active"[39m
+            [36m>[39m
+              [0mSummary[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"tool-tab-btn "[39m
+            [36m>[39m
+              [0mFlashcards[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"tool-tab-btn "[39m
+            [36m>[39m
+              [0mPractice Quiz[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"tool-tab-btn "[39m
+            [36m>[39m
+              [0mAsk PDF (RAG)[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"tool-content-area"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"summary-tab-content"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"tool-tab-placeholder"[39m
+              [36m>[39m
+                [36m<svg[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33mclass[39m=[32m"lucide lucide-file-text place-icon"[39m
+                  [33mfill[39m=[32m"none"[39m
+                  [33mheight[39m=[32m"32"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-linecap[39m=[32m"round"[39m
+                  [33mstroke-linejoin[39m=[32m"round"[39m
+                  [33mstroke-width[39m=[32m"2"[39m
+                  [33mviewBox[39m=[32m"0 0 24 24"[39m
+                  [33mwidth[39m=[32m"32"[39m
+                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                [36m>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M14 2v5a1 1 0 0 0 1 1h5"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M10 9H8"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M16 13H8"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M16 17H8"[39m
+                  [36m/>[39m
+                [36m</svg>[39m
+                [36m<p>[39m
+                  [0mNo summary compiled. Select a document on the left and click "Summarize".[0m
+                [36m</p>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+[90m [2m❯[22m Object.getElementError node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m❯[22m getAllByLabelText node_modules/@testing-library/dom/dist/queries/label-text.js:[2m108:40[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m52:17[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m❯[22m src/tests/documents/DocumentsView.test.tsx:[2m167:29[22m[39m
+    [90m165| [39m    })[33m;[39m
+    [90m166| [39m
+    [90m167| [39m    fireEvent.change(screen.getByLabelText(/Select Workspace Document/…
+    [90m   | [39m                            [31m^[39m
+    [90m168| [39m    fireEvent.click(screen.getByRole('button', { name: /Generate Quiz/…
+    [90m169| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/8]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/tests/workflows/WorkflowsView.test.tsx[2m > [22mWorkflowsView[2m > [22mallows appending a new trigger node to the canvas
+[31m[1mTestingLibraryElementError[22m[39m: Found a label with the text of: Node Category, however no form control was found associated to that label. Make sure you're using the "for" attribute or "aria-labelledby" attribute correctly.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"workflows-view"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"workflows-top-bar glass-panel"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"bar-left"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"lucide lucide-git-branch bar-icon"[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mheight[39m=[32m"18"[39m
+            [33mstroke[39m=[32m"currentColor"[39m
+            [33mstroke-linecap[39m=[32m"round"[39m
+            [33mstroke-linejoin[39m=[32m"round"[39m
+            [33mstroke-width[39m=[32m"2"[39m
+            [33mviewBox[39m=[32m"0 0 24 24"[39m
+            [33mwidth[39m=[32m"18"[39m
+            [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M15 6a9 9 0 0 0-9 9V3"[39m
+            [36m/>[39m
+            [36m<circle[39m
+              [33mcx[39m=[32m"18"[39m
+              [33mcy[39m=[32m"6"[39m
+              [33mr[39m=[32m"3"[39m
+            [36m/>[39m
+            [36m<circle[39m
+              [33mcx[39m=[32m"6"[39m
+              [33mcy[39m=[32m"18"[39m
+              [33mr[39m=[32m"3"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<select[39m
+            [33mclass[39m=[32m"form-input workflow-selector"[39m
+          [36m>[39m
+            [36m<option[39m
+              [33mdisabled[39m=[32m""[39m
+              [33mvalue[39m=[32m""[39m
+            [36m>[39m
+              [0m-- Select Automation --[0m
+            [36m</option>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"wf-1"[39m
+            [36m>[39m
+              [0mWeekly Task Sync[0m
+            [36m</option>[39m
+          [36m</select>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"bar-right"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn-primary run-flow-btn"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-play"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"14"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"14"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [36m<span>[39m
+              [0mRun Automation[0m
+            [36m</span>[39m
+          [36m</button>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn-secondary"[39m
+            [33mstyle[39m=[32m"padding: 8px 10px; display: flex; align-items: center; justify-content: center;"[39m
+            [33mtitle[39m=[32m"Delete Automation"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-trash2 lucide-trash-2"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"14"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"14"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M10 11v6"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M14 11v6"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M3 6h18"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</button>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn-secondary"[39m
+          [36m>[39m
+            [0mAdd Template[0m
+          [36m</button>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"workflows-split-layout"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"node-canvas-panel glass-card"[39m
+        [36m>[39m
+          [36m<h3[39m
+            [33mclass[39m=[32m"section-title"[39m
+          [36m>[39m
+            [0mAutomation Canvas[0m
+          [36m</h3>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"canvas-grid"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"canvas-nodes-container"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"node-card-block trigger"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"node-badge-lbl"[39m
+                [36m>[39m
+                  [0mtrigger[0m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"node-title-desc"[39m
+                [36m>[39m
+                  [36m<strong>[39m
+                    [0mEvent Trigger:[0m
+                  [36m</strong>[39m
+                  [36m<span>[39m
+                    [0mon_new_task[0m
+                  [36m</span>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"node-editor-form glass-card"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"details-subheading"[39m
+              [36m>[39m
+                [0mAppend Canvas Node[0m
+              [36m</span>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"form-row"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"field-group flex-1"[39m
+                [36m>[39m
+                  [36m<label>[39m
+                    [0mNode Category[0m
+                  [36m</label>[39m
+                  [36m<select[39m
+                    [33mclass[39m=[32m"form-input"[39m
+                  [36m>[39m
+                    [36m<option[39m
+                      [33mvalue[39m=[32m"trigger"[39m
+                    [36m>[39m
+                      [0mTrigger[0m
+                    [36m</option>[39m
+                    [36m<option[39m
+                      [33mvalue[39m=[32m"action"[39m
+                    [36m>[39m
+                      [0mAction[0m
+                    [36m</option>[39m
+                  [36m</select>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"field-group flex-1"[39m
+                [36m>[39m
+                  [36m<label>[39m
+                    [0mEvent Name[0m
+                  [36m</label>[39m
+                  [36m<select[39m
+                    [33mclass[39m=[32m"form-input"[39m
+                  [36m>[39m
+                    [36m<option[39m
+                      [33mvalue[39m=[32m"on_new_task"[39m
+                    [36m>[39m
+                      [0mOn New Task[0m
+                    [36m</option>[39m
+                    [36m<option[39m
+                      [33mvalue[39m=[32m"on_meeting_end"[39m
+                    [36m>[39m
+                      [0mOn Meeting Complete[0m
+                    [36m</option>[39m
+                    [36m<option[39m
+                      [33mvalue[39m=[32m"on_burnout_alert"[39m
+                    [36m>[39m
+                      [0mOn Burnout Danger[0m
+                    [36m</option>[39m
+                  [36m</select>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"btn-primary append-node-btn"[39m
+              [36m>[39m
+                [36m<svg[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33mclass[39m=[32m"lucide lucide-plus"[39m
+                  [33mfill[39m=[32m"none"[39m
+                  [33mheight[39m=[32m"14"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-linecap[39m=[32m"round"[39m
+                  [33mstroke-linejoin[39m=[32m"round"[39m
+                  [33mstroke-width[39m=[32m"2"[39m
+                  [33mviewBox[39m=[32m"0 0 24 24"[39m
+                  [33mwidth[39m=[32m"14"[39m
+                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                [36m>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M5 12h14"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M12 5v14"[39m
+                  [36m/>[39m
+                [36m</svg>[39m
+                [36m<span>[39m
+                  [0mAppend Node[0m
+                [36m</span>[39m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"execution-logs-panel glass-card"[39m
+        [36m>[39m
+          [36m<h3[39m
+            [33mclass[39m=[32m"section-title"[39m
+          [36m>[39m
+            [0mExecution Console[0m
+          [36m</h3>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"console-placeholder"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-circle-alert info-icon"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"20"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"20"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<circle[39m
+                [33mcx[39m=[32m"12"[39m
+                [33mcy[39m=[32m"12"[39m
+                [33mr[39m=[32m"10"[39m
+              [36m/>[39m
+              [36m<line[39m
+                [33mx1[39m=[32m"12"[39m
+                [33mx2[39m=[32m"12"[39m
+                [33my1[39m=[32m"8"[39m
+                [33my2[39m=[32m"12"[39m
+              [36m/>[39m
+              [36m<line[39m
+                [33mx1[39m=[32m"12"[39m
+                [33mx2[39m=[32m"12.01"[39m
+                [33my1[39m=[32m"16"[39m
+                [33my2[39m=[32m"16"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [36m<p>[39m
+              [0mPress "Run Automation" to verify background trigger logs.[0m
+            [36m</p>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+[90m [2m❯[22m Object.getElementError node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m❯[22m getAllByLabelText node_modules/@testing-library/dom/dist/queries/label-text.js:[2m108:40[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m52:17[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m❯[22m src/tests/workflows/WorkflowsView.test.tsx:[2m95:29[22m[39m
+    [90m 93| [39m
+    [90m 94| [39m    [90m// Select category 'Action'[39m
+    [90m 95| [39m    fireEvent.change(screen.getByLabelText('Node Category'), { target:…
+    [90m   | [39m                            [31m^[39m
+    [90m 96| [39m
+    [90m 97| [39m    [90m// Select action name 'Draft Follow-up Email'[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/8]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/tests/meetings/MeetingsView.test.tsx[2m > [22mMeetingsView[2m > [22mallows converting action items to tasks
+[31m[1mTestingLibraryElementError[22m[39m: Unable to find an accessible element with the role "button" and name `/Convert to Task/i`
+
+Here are the accessible roles:
+
+  heading:
+
+  Name "Meeting Scribe":
+  [36m<h3[39m
+    [33mclass[39m=[32m"section-title"[39m
+  [36m/>[39m
+
+  Name "AI Summary & Action Items":
+  [36m<h3[39m
+    [33mclass[39m=[32m"section-title"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+  textbox:
+
+  Name "":
+  [36m<textarea[39m
+    [33mclass[39m=[32m"form-input transcript-textarea"[39m
+    [33mplaceholder[39m=[32m"Paste meeting transcript lines or summary notes here..."[39m
+    [33mrequired[39m=[32m""[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "Extract Decisions & Action Items":
+  [36m<button[39m
+    [33mclass[39m=[32m"btn-primary process-btn"[39m
+    [33mtype[39m=[32m"submit"[39m
+  [36m/>[39m
+
+  Name "Sync Tasks":
+  [36m<button[39m
+    [33mclass[39m=[32m"btn-primary convert-btn"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  list:
+
+  Name "":
+  [36m<ul[39m
+    [33mclass[39m=[32m"decisions-list"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  listitem:
+
+  Name "":
+  [36m<li[39m
+    [33mclass[39m=[32m"empty-lbl"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"meetings-view"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"meetings-split-layout"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"meetings-input-panel glass-card"[39m
+        [36m>[39m
+          [36m<h3[39m
+            [33mclass[39m=[32m"section-title"[39m
+          [36m>[39m
+            [0mMeeting Scribe[0m
+          [36m</h3>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"audio-dropzone  "[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-video dropzone-icon"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"32"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"32"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"[39m
+              [36m/>[39m
+              [36m<rect[39m
+                [33mheight[39m=[32m"12"[39m
+                [33mrx[39m=[32m"2"[39m
+                [33mwidth[39m=[32m"14"[39m
+                [33mx[39m=[32m"2"[39m
+                [33my[39m=[32m"6"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"dropzone-text"[39m
+            [36m>[39m
+              [36m<p>[39m
+                [0mDrag and drop meeting audio (MP3, WAV) here[0m
+              [36m</p>[39m
+              [36m<span>[39m
+                [0mor[0m
+              [36m</span>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"file-select-label"[39m
+              [36m>[39m
+                [0mBrowse Files[0m
+                [36m<input[39m
+                  [33maccept[39m=[32m"audio/*"[39m
+                  [33mstyle[39m=[32m"display: none;"[39m
+                  [33mtype[39m=[32m"file"[39m
+                [36m/>[39m
+              [36m</label>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<form[39m
+            [33mclass[39m=[32m"transcript-form"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"field-group"[39m
+            [36m>[39m
+              [36m<label>[39m
+                [0mTranscript or Notes[0m
+              [36m</label>[39m
+              [36m<textarea[39m
+                [33mclass[39m=[32m"form-input transcript-textarea"[39m
+                [33mplaceholder[39m=[32m"Paste meeting transcript lines or summary notes here..."[39m
+                [33mrequired[39m=[32m""[39m
+              [36m>[39m
+                [0mAlex: Implement Firestore[0m
+              [36m</textarea>[39m
+            [36m</div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn-primary process-btn"[39m
+              [33mtype[39m=[32m"submit"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-sparkles"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"14"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"14"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M20 2v4"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M22 4h-4"[39m
+                [36m/>[39m
+                [36m<circle[39m
+                  [33mcx[39m=[32m"4"[39m
+                  [33mcy[39m=[32m"20"[39m
+                  [33mr[39m=[32m"2"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [36m<span>[39m
+                [0mExtract Decisions & Action Items[0m
+              [36m</span>[39m
+            [36m</button>[39m
+          [36m</form>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"meetings-results-panel glass-card"[39m
+        [36m>[39m
+          [36m<h3[39m
+            [33mclass[39m=[32m"section-title"[39m
+          [36m>[39m
+            [0mAI Summary & Action Items[0m
+          [36m</h3>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"scribe-results-content"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"result-section"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"result-section-lbl"[39m
+              [36m>[39m
+                [0mBrief Summary[0m
+              [36m</span>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"summary-bubble glass-card"[39m
+              [36m>[39m
+                [0mAPI schemas finalizing.[0m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"result-section"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"result-section-lbl"[39m
+              [36m>[39m
+                [0mDecisions Made[0m
+              [36m</span>[39m
+              [36m<ul[39m
+                [33mclass[39m=[32m"decisions-list"[39m
+              [36m>[39m
+                [36m<li[39m
+                  [33mclass[39m=[32m"empty-lbl"[39m
+                [36m>[39m
+                  [0mNo explicit decisions resolved.[0m
+                [36m</li>[39m
+              [36m</ul>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"result-section"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"action-items-header"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"result-section-lbl"[39m
+                [36m>[39m
+                  [0mAction Items[0m
+                [36m</span>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"btn-primary convert-btn"[39m
+                [36m>[39m
+                  [36m<svg[39m
+                    [33maria-hidden[39m=[32m"true"[39m
+                    [33mclass[39m=[32m"lucide lucide-square-check-big"[39m
+                    [33mfill[39m=[32m"none"[39m
+                    [33mheight[39m=[32m"12"[39m
+                    [33mstroke[39m=[32m"currentColor"[39m
+                    [33mstroke-linecap[39m=[32m"round"[39m
+                    [33mstroke-linejoin[39m=[32m"round"[39m
+                    [33mstroke-width[39m=[32m"2"[39m
+                    [33mviewBox[39m=[32m"0 0 24 24"[39m
+                    [33mwidth[39m=[32m"12"[39m
+                    [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                  [36m>[39m
+                    [36m<path[39m
+                      [33md[39m=[32m"M21 10.656V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12.344"[39m
+                    [36m/>[39m
+                    [36m<path[39m
+                      [33md[39m=[32m"m9 11 3 3L22 4"[39m
+                    [36m/>[39m
+                  [36m</svg>[39m
+                  [36m<span>[39m
+                    [0mSync Tasks[0m
+                  [36m</span>[39m
+                [36m</button>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"action-items-list"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"action-item-card glass-card"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"action-title"[39m
+                  [36m>[39m
+                    [0mImplement Firestore[0m
+                  [36m</div>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"action-meta"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"assignee-badge"[39m
+                    [36m>[39m
+                      [0mAssignee: [0m
+                      [0mAlex[0m
+                    [36m</span>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"est-badge"[39m
+                    [36m>[39m
+                      [0m60[0m
+                      [0m mins[0m
+                    [36m</span>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+[90m [2m❯[22m Object.getElementError node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m76:38[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m52:17[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m❯[22m src/tests/meetings/MeetingsView.test.tsx:[2m102:31[22m[39m
+    [90m100| [39m
+    [90m101| [39m    [90m// Click bulk convert button[39m
+    [90m102| [39m    const convertBtn = screen.getByRole('button', { name: /Convert to …
+    [90m   | [39m                              [31m^[39m
+    [90m103| [39m    fireEvent[33m.[39m[34mclick[39m(convertBtn)[33m;[39m
+    [90m104| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/8]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/tests/tasks/TasksView.test.tsx[2m > [22mTasksView[2m > [22mhandles subtasks rendering, creation and completion toggling
+[31m[1mTestingLibraryElementError[22m[39m: Unable to find an element with the text: Write first test. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"tasks-view"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"nlp-prompt-card glass-panel"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"nlp-header"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"lucide lucide-sparkles nlp-icon"[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mheight[39m=[32m"16"[39m
+            [33mstroke[39m=[32m"currentColor"[39m
+            [33mstroke-linecap[39m=[32m"round"[39m
+            [33mstroke-linejoin[39m=[32m"round"[39m
+            [33mstroke-width[39m=[32m"2"[39m
+            [33mviewBox[39m=[32m"0 0 24 24"[39m
+            [33mwidth[39m=[32m"16"[39m
+            [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M20 2v4"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M22 4h-4"[39m
+            [36m/>[39m
+            [36m<circle[39m
+              [33mcx[39m=[32m"4"[39m
+              [33mcy[39m=[32m"20"[39m
+              [33mr[39m=[32m"2"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<span>[39m
+            [0mAI Task Ingestion[0m
+          [36m</span>[39m
+        [36m</div>[39m
+        [36m<form[39m
+          [33mclass[39m=[32m"nlp-form"[39m
+        [36m>[39m
+          [36m<input[39m
+            [33mclass[39m=[32m"form-input nlp-input"[39m
+            [33mplaceholder[39m=[32m"e.g. Schedule database mid-term prep for 90 mins next Wednesday. Mark it high priority, tags: dbms, college."[39m
+            [33mtype[39m=[32m"text"[39m
+            [33mvalue[39m=[32m""[39m
+          [36m/>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn-primary nlp-btn"[39m
+            [33mdisabled[39m=[32m""[39m
+            [33mtype[39m=[32m"submit"[39m
+          [36m>[39m
+            [0mAnalyze[0m
+          [36m</button>[39m
+        [36m</form>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"tasks-layout-split"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"tasks-list-panel glass-card"[39m
+        [36m>[39m
+          [36m<h3[39m
+            [33mclass[39m=[32m"section-title"[39m
+          [36m>[39m
+            [0mTask Backlog[0m
+          [36m</h3>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"tasks-list"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"task-card "[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"task-row"[39m
+              [36m>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"toggle-status-btn"[39m
+                [36m>[39m
+                  [36m<svg[39m
+                    [33maria-hidden[39m=[32m"true"[39m
+                    [33mclass[39m=[32m"lucide lucide-circle unchecked-icon"[39m
+                    [33mfill[39m=[32m"none"[39m
+                    [33mheight[39m=[32m"20"[39m
+                    [33mstroke[39m=[32m"currentColor"[39m
+                    [33mstroke-linecap[39m=[32m"round"[39m
+                    [33mstroke-linejoin[39m=[32m"round"[39m
+                    [33mstroke-width[39m=[32m"2"[39m
+                    [33mviewBox[39m=[32m"0 0 24 24"[39m
+                    [33mwidth[39m=[32m"20"[39m
+                    [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                  [36m>[39m
+                    [36m<circle[39m
+                      [33mcx[39m=[32m"12"[39m
+                      [33mcy[39m=[32m"12"[39m
+                      [33mr[39m=[32m"10"[39m
+                    [36m/>[39m
+                  [36m</svg>[39m
+                [36m</button>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"task-info-block"[39m
+                [36m>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"task-title-text"[39m
+                  [36m>[39m
+                    [0mLearn Vitest[0m
+                  [36m</span>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"task-meta-tags"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"priority-badge high"[39m
+                    [36m>[39m
+                      [0mhigh[0m
+                    [36m</span>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"category-badge"[39m
+                    [36m>[39m
+                      [0mWork[0m
+                    [36m</span>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"duration-badge"[39m
+                    [36m>[39m
+                      [36m<svg[39m
+                        [33maria-hidden[39m=[32m"true"[39m
+                        [33mclass[39m=[32m"lucide lucide-clock"[39m
+                        [33mfill[39m=[32m"none"[39m
+                        [33mheight[39m=[32m"10"[39m
+                        [33mstroke[39m=[32m"currentColor"[39m
+                        [33mstroke-linecap[39m=[32m"round"[39m
+                        [33mstroke-linejoin[39m=[32m"round"[39m
+                        [33mstroke-width[39m=[32m"2"[39m
+                        [33mviewBox[39m=[32m"0 0 24 24"[39m
+                        [33mwidth[39m=[32m"10"[39m
+                        [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                      [36m>[39m
+                        [36m<circle[39m
+                          [33mcx[39m=[32m"12"[39m
+                          [33mcy[39m=[32m"12"[39m
+                          [33mr[39m=[32m"10"[39m
+                        [36m/>[39m
+                        [36m<path[39m
+                          [33md[39m=[32m"M12 6v6l4 2"[39m
+                        [36m/>[39m
+                      [36m</svg>[39m
+                      [0m60[0m
+                      [0mm[0m
+                    [36m</span>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"tag-badge"[39m
+                    [36m>[39m
+                      [0m#[0m
+                      [0mtest[0m
+                    [36m</span>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"tag-badge"[39m
+                    [36m>[39m
+                      [0m#[0m
+                      [0mreact[0m
+                    [36m</span>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"task-actions"[39m
+                [36m>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"expand-details-btn"[39m
+                  [36m>[39m
+                    [36m<svg[39m
+                      [33maria-hidden[39m=[32m"true"[39m
+                      [33mclass[39m=[32m"lucide lucide-chevron-down"[39m
+                      [33mfill[39m=[32m"none"[39m
+                      [33mheight[39m=[32m"16"[39m
+                      [33mstroke[39m=[32m"currentColor"[39m
+                      [33mstroke-linecap[39m=[32m"round"[39m
+                      [33mstroke-linejoin[39m=[32m"round"[39m
+                      [33mstroke-width[39m=[32m"2"[39m
+                      [33mviewBox[39m=[32m"0 0 24 24"[39m
+                      [33mwidth[39m=[32m"16"[39m
+                      [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                    [36m>[39m
+                      [36m<path[39m
+                        [33md[39m=[32m"m6 9 6 6 6-6"[39m
+                      [36m/>[39m
+                    [36m</svg>[39m
+                  [36m</button>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"delete-task-btn"[39m
+                  [36m>[39m
+                    [36m<svg[39m
+                      [33maria-hidden[39m=[32m"true"[39m
+                      [33mclass[39m=[32m"lucide lucide-trash2 lucide-trash-2"[39m
+                      [33mfill[39m=[32m"none"[39m
+                      [33mheight[39m=[32m"16"[39m
+                      [33mstroke[39m=[32m"currentColor"[39m
+                      [33mstroke-linecap[39m=[32m"round"[39m
+                      [33mstroke-linejoin[39m=[32m"round"[39m
+                      [33mstroke-width[39m=[32m"2"[39m
+                      [33mviewBox[39m=[32m"0 0 24 24"[39m
+                      [33mwidth[39m=[32m"16"[39m
+                      [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                    [36m>[39m
+                      [36m<path[39m
+                        [33md[39m=[32m"M10 11v6"[39m
+                      [36m/>[39m
+                      [36m<path[39m
+                        [33md[39m=[32m"M14 11v6"[39m
+                      [36m/>[39m
+                      [36m<path[39m
+                        [33md[39m=[32m"M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"[39m
+                      [36m/>[39m
+                      [36m<path[39m
+                        [33md[39m=[32m"M3 6h18"[39m
+                      [36m/>[39m
+                      [36m<path[39m
+                        [33md[39m=[32m"M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"[39m
+                      [36m/>[39m
+                    [36m</svg>[39m
+                  [36m</button>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"task-creator-panel glass-card"[39m
+        [36m>[39m
+          [36m<h3[39m
+            [33mclass[39m=[32m"section-title"[39m
+          [36m>[39m
+            [0mNew Task[0m
+          [36m</h3>[39m
+          [36m<form[39m
+            [33mclass[39m=[32m"creator-form"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"field-group"[39m
+            [36m>[39m
+              [36m<label>[39m
+                [0mTask Title[0m
+              [36m</label>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-input"[39m
+                [33mplaceholder[39m=[32m"Database assignment..."[39m
+                [33mrequired[39m=[32m""[39m
+                [33mtype[39m=[32m"text"[39m
+                [33mvalue[39m=[32m""[39m
+              [36m/>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"field-group"[39m
+            [36m>[39m
+              [36m<label>[39m
+                [0mDescription[0m
+              [36m</label>[39m
+              [36m<textarea[39m
+                [33mclass[39m=[32m"form-input"[39m
+                [33mplaceholder[39m=[32m"Practice normalization and SQL indexing..."[39m
+              [36m/>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-row"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"field-group flex-1"[39m
+              [36m>[39m
+                [36m<label>[39m
+                  [0mPriority[0m
+                [36m</label>[39m
+                [36m<select[39m
+                  [33mclass[39m=[32m"form-input"[39m
+                [36m>[39m
+                  [36m<option[39m
+                    [33mvalue[39m=[32m"low"[39m
+                  [36m>[39m
+                    [0mLow[0m
+                  [36m</option>[39m
+                  [36m<option[39m
+                    [33mvalue[39m=[32m"medium"[39m
+                  [36m>[39m
+                    [0mMedium[0m
+                  [36m</option>[39m
+                  [36m<option[39m
+                    [33mvalue[39m=[32m"high"[39m
+                  [36m>[39m
+                    [0mHigh[0m
+                  [36m</option>[39m
+                  [36m<option[39m
+                    [33mvalue[39m=[32m"urgent"[39m
+                  [36m>[39m
+                    [0mUrgent[0m
+                  [36m</option>[39m
+                [36m</select>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"field-group flex-1"[39m
+              [36m>[39m
+                [36m<label>[39m
+                  [0mMinutes[0m
+                [36m</label>[39m
+                [36m<input[39m
+                  [33mclass[39m=[32m"form-input"[39m
+                  [33mmax[39m=[32m"240"[39m
+                  [33mmin[39m=[32m"5"[39m
+                  [33mtype[39m=[32m"number"[39m
+                  [33mvalue[39m=[32m"30"[39m
+                [36m/>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-row"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"field-group flex-1"[39m
+              [36m>[39m
+                [36m<label>[39m
+                  [0mCategory[0m
+                [36m</label>[39m
+                [36m<input[39m
+                  [33mclass[39m=[32m"form-input"[39m
+                  [33mplaceholder[39m=[32m"e.g. Work, College"[39m
+                  [33mtype[39m=[32m"text"[39m
+                  [33mvalue[39m=[32m"Work"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"field-group flex-1"[39m
+              [36m>[39m
+                [36m<label>[39m
+                  [0mTags (comma separated)[0m
+                [36m</label>[39m
+                [36m<input[39m
+                  [33mclass[39m=[32m"form-input"[39m
+                  [33mplaceholder[39m=[32m"sql, study"[39m
+                  [33mtype[39m=[32m"text"[39m
+                  [33mvalue[39m=[32m""[39m
+                [36m/>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn-primary submit-creator-btn"[39m
+              [33mtype[39m=[32m"submit"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-plus"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"16"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"16"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M5 12h14"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M12 5v14"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [36m<span>[39m
+                [0mCreate Task[0m
+              [36m</span>[39m
+            [36m</button>[39m
+          [36m</form>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+[90m [2m❯[22m Object.getElementError node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m76:38[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m52:17[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m❯[22m src/tests/tasks/TasksView.test.tsx:[2m138:19[22m[39m
+    [90m136| [39m
+    [90m137| [39m    [90m// Subtask title should be visible[39m
+    [90m138| [39m    [34mexpect[39m(screen[33m.[39m[34mgetByText[39m([32m'Write first test'[39m))[33m.[39m[34mtoBeInTheDocument[39m()[33m;[39m
+    [90m   | [39m                  [31m^[39m
+    [90m139| [39m
+    [90m140| [39m    [90m// Toggle subtask status (checkbox click)[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/8]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/tests/tasks/TasksView.test.tsx[2m > [22mTasksView[2m > [22mhandles AI NLP task parsing and approval
+[31m[1mTestingLibraryElementError[22m[39m: Unable to find an element with the placeholder text of: /e.g. Schedule a 45m workout/i
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"tasks-view"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"nlp-prompt-card glass-panel"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"nlp-header"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"lucide lucide-sparkles nlp-icon"[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mheight[39m=[32m"16"[39m
+            [33mstroke[39m=[32m"currentColor"[39m
+            [33mstroke-linecap[39m=[32m"round"[39m
+            [33mstroke-linejoin[39m=[32m"round"[39m
+            [33mstroke-width[39m=[32m"2"[39m
+            [33mviewBox[39m=[32m"0 0 24 24"[39m
+            [33mwidth[39m=[32m"16"[39m
+            [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M20 2v4"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M22 4h-4"[39m
+            [36m/>[39m
+            [36m<circle[39m
+              [33mcx[39m=[32m"4"[39m
+              [33mcy[39m=[32m"20"[39m
+              [33mr[39m=[32m"2"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<span>[39m
+            [0mAI Task Ingestion[0m
+          [36m</span>[39m
+        [36m</div>[39m
+        [36m<form[39m
+          [33mclass[39m=[32m"nlp-form"[39m
+        [36m>[39m
+          [36m<input[39m
+            [33mclass[39m=[32m"form-input nlp-input"[39m
+            [33mplaceholder[39m=[32m"e.g. Schedule database mid-term prep for 90 mins next Wednesday. Mark it high priority, tags: dbms, college."[39m
+            [33mtype[39m=[32m"text"[39m
+            [33mvalue[39m=[32m""[39m
+          [36m/>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn-primary nlp-btn"[39m
+            [33mdisabled[39m=[32m""[39m
+            [33mtype[39m=[32m"submit"[39m
+          [36m>[39m
+            [0mAnalyze[0m
+          [36m</button>[39m
+        [36m</form>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"tasks-layout-split"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"tasks-list-panel glass-card"[39m
+        [36m>[39m
+          [36m<h3[39m
+            [33mclass[39m=[32m"section-title"[39m
+          [36m>[39m
+            [0mTask Backlog[0m
+          [36m</h3>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"list-empty"[39m
+          [36m>[39m
+            [0mNo active tasks in your backlog. Create one or prompt AI above![0m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"task-creator-panel glass-card"[39m
+        [36m>[39m
+          [36m<h3[39m
+            [33mclass[39m=[32m"section-title"[39m
+          [36m>[39m
+            [0mNew Task[0m
+          [36m</h3>[39m
+          [36m<form[39m
+            [33mclass[39m=[32m"creator-form"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"field-group"[39m
+            [36m>[39m
+              [36m<label>[39m
+                [0mTask Title[0m
+              [36m</label>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-input"[39m
+                [33mplaceholder[39m=[32m"Database assignment..."[39m
+                [33mrequired[39m=[32m""[39m
+                [33mtype[39m=[32m"text"[39m
+                [33mvalue[39m=[32m""[39m
+              [36m/>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"field-group"[39m
+            [36m>[39m
+              [36m<label>[39m
+                [0mDescription[0m
+              [36m</label>[39m
+              [36m<textarea[39m
+                [33mclass[39m=[32m"form-input"[39m
+                [33mplaceholder[39m=[32m"Practice normalization and SQL indexing..."[39m
+              [36m/>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-row"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"field-group flex-1"[39m
+              [36m>[39m
+                [36m<label>[39m
+                  [0mPriority[0m
+                [36m</label>[39m
+                [36m<select[39m
+                  [33mclass[39m=[32m"form-input"[39m
+                [36m>[39m
+                  [36m<option[39m
+                    [33mvalue[39m=[32m"low"[39m
+                  [36m>[39m
+                    [0mLow[0m
+                  [36m</option>[39m
+                  [36m<option[39m
+                    [33mvalue[39m=[32m"medium"[39m
+                  [36m>[39m
+                    [0mMedium[0m
+                  [36m</option>[39m
+                  [36m<option[39m
+                    [33mvalue[39m=[32m"high"[39m
+                  [36m>[39m
+                    [0mHigh[0m
+                  [36m</option>[39m
+                  [36m<option[39m
+                    [33mvalue[39m=[32m"urgent"[39m
+                  [36m>[39m
+                    [0mUrgent[0m
+                  [36m</option>[39m
+                [36m</select>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"field-group flex-1"[39m
+              [36m>[39m
+                [36m<label>[39m
+                  [0mMinutes[0m
+                [36m</label>[39m
+                [36m<input[39m
+                  [33mclass[39m=[32m"form-input"[39m
+                  [33mmax[39m=[32m"240"[39m
+                  [33mmin[39m=[32m"5"[39m
+                  [33mtype[39m=[32m"number"[39m
+                  [33mvalue[39m=[32m"30"[39m
+                [36m/>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-row"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"field-group flex-1"[39m
+              [36m>[39m
+                [36m<label>[39m
+                  [0mCategory[0m
+                [36m</label>[39m
+                [36m<input[39m
+                  [33mclass[39m=[32m"form-input"[39m
+                  [33mplaceholder[39m=[32m"e.g. Work, College"[39m
+                  [33mtype[39m=[32m"text"[39m
+                  [33mvalue[39m=[32m"Work"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"field-group flex-1"[39m
+              [36m>[39m
+                [36m<label>[39m
+                  [0mTags (comma separated)[0m
+                [36m</label>[39m
+                [36m<input[39m
+                  [33mclass[39m=[32m"form-input"[39m
+                  [33mplaceholder[39m=[32m"sql, study"[39m
+                  [33mtype[39m=[32m"text"[39m
+                  [33mvalue[39m=[32m""[39m
+                [36m/>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn-primary submit-creator-btn"[39m
+              [33mtype[39m=[32m"submit"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-plus"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"16"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"16"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M5 12h14"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M12 5v14"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [36m<span>[39m
+                [0mCreate Task[0m
+              [36m</span>[39m
+            [36m</button>[39m
+          [36m</form>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+[90m [2m❯[22m Object.getElementError node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m76:38[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m52:17[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m❯[22m src/tests/tasks/TasksView.test.tsx:[2m208:29[22m[39m
+    [90m206| [39m
+    [90m207| [39m    [90m// Enter NLP prompt[39m
+    [90m208| [39m    fireEvent.change(screen.getByPlaceholderText(/e.g. Schedule a 45m …
+    [90m   | [39m                            [31m^[39m
+    [90m209| [39m      target: { value: 'Need to review production logs urgently for 30…
+    [90m210| [39m    })[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/8]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m4 failed[39m[22m[2m | [22m[1m[32m6 passed[39m[22m[90m (10)[39m
+[2m      Tests [22m [1m[31m8 failed[39m[22m[2m | [22m[1m[32m26 passed[39m[22m[90m (34)[39m
+[2m   Start at [22m 13:24:57
+[2m   Duration [22m 8.20s[2m (transform 585ms, setup 546ms, collect 1.90s, tests 2.88s, environment 1.50s, prepare 142ms)[22m
+

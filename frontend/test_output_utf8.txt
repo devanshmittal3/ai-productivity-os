@@ -1,0 +1,30 @@
+
+[1m[46m RUN [49m[22m [36mv3.2.7 [39m[90mD:/Task optimizer AI/frontend[39m
+
+[90mstderr[2m | src/tests/tasks/TasksView.test.tsx[2m > [22m[2mTasksView[2m > [22m[2mhandles AI NLP task parsing and approval
+[22m[39mEach child in a list should have a unique "key" prop.
+
+Check the render method of `TasksView`. See https://react.dev/link/warning-keys for more information.
+
+ [32m✓[39m src/tests/tasks/TasksView.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 400[2mms[22m[39m
+ [32m✓[39m src/tests/documents/DocumentsView.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[33m 574[2mms[22m[39m
+ [32m✓[39m src/tests/calendar/CalendarView.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 175[2mms[22m[39m
+ [32m✓[39m src/tests/workflows/WorkflowsView.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 128[2mms[22m[39m
+ [32m✓[39m src/tests/meetings/MeetingsView.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 158[2mms[22m[39m
+ [32m✓[39m src/tests/auth/AuthView.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 103[2mms[22m[39m
+ [32m✓[39m src/tests/copilot/CopilotPanel.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 87[2mms[22m[39m
+ [32m✓[39m src/tests/settings/SettingsView.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 31[2mms[22m[39m
+[90mstderr[2m | src/tests/dashboard/DashboardView.test.tsx[2m > [22m[2mDashboardView[2m > [22m[2mfetches and renders insights data
+[22m[39mThe tag <stop> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter.
+<linearGradient /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+The tag <linearGradient> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter.
+The tag <defs> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter.
+
+ [32m✓[39m src/tests/dashboard/DashboardView.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 39[2mms[22m[39m
+ [32m✓[39m src/tests/layout/Layout.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 33[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m10 passed[39m[22m[90m (10)[39m
+[2m      Tests [22m [1m[32m34 passed[39m[22m[90m (34)[39m
+[2m   Start at [22m 13:27:58
+[2m   Duration [22m 4.04s[2m (transform 424ms, setup 207ms, collect 1.37s, tests 1.73s, environment 414ms, prepare 83ms)[22m
+

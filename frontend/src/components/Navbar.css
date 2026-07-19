@@ -1,0 +1,106 @@
+.app-navbar {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 28px;
+  margin: 16px 16px 0 0;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.page-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  background: rgba(10, 11, 16, 0.4);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+  width: 260px;
+  transition: all 0.2s ease;
+}
+
+.search-bar-container:focus-within {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.2);
+  width: 300px;
+}
+
+.search-icon {
+  color: var(--text-muted);
+  margin-right: 8px;
+}
+
+.navbar-search-input {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  outline: none;
+  font-size: 13px;
+  width: 100%;
+}
+
+.navbar-search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.nav-action-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.nav-action-btn:hover {
+  background: rgba(36, 41, 66, 0.5);
+  color: var(--text-primary);
+  border-color: rgba(139, 92, 246, 0.2);
+}
+
+.security-icon-emerald {
+  color: var(--accent-success);
+  filter: drop-shadow(0 0 4px rgba(16, 185, 129, 0.4));
+}
+
+.notification-bell-container {
+  position: relative;
+}
+
+.notification-badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background-color: var(--accent-secondary);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 6px var(--accent-secondary);
+}

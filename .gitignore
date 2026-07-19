@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+
+# Virtual environments
+venv/
+.venv/
+
+# Node
+node_modules/
+
+# Build
+dist/
+build/
+
+# Coverage
+coverage/
+coverage_html/
+frontend/coverage/
+
+# Playwright
+playwright-report/
+test-results/
+playwright-browsers/
+
+# Temporary
+frontend/temp/
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.*
+
+# OS
+.DS_Store
+Thumbs.db

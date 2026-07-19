@@ -1,0 +1,112 @@
+.auth-view-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-primary);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(236, 72, 153, 0.12) 0px, transparent 50%);
+}
+
+.auth-card {
+  width: 400px;
+  padding: 40px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.auth-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.logo-icon-lg {
+  width: 28px;
+  height: 28px;
+  color: var(--accent-primary);
+  filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.6));
+}
+
+.auth-logo-text {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+}
+
+.auth-subtitle {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 0 0 32px 0;
+}
+
+.auth-error-banner {
+  background-color: rgba(239, 68, 68, 0.15);
+  border: 1px solid var(--accent-danger);
+  color: var(--accent-danger);
+  padding: 10px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 14px;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.input-group .form-input {
+  width: 100%;
+  padding-left: 42px;
+  box-sizing: border-box;
+}
+
+.select-group select {
+  appearance: none;
+  cursor: pointer;
+}
+
+.auth-submit-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.auth-toggle {
+  margin-top: 24px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.toggle-btn {
+  background: transparent;
+  border: none;
+  color: var(--accent-primary);
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+.toggle-btn:hover {
+  text-decoration: underline;
+}
