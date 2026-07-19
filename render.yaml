@@ -14,18 +14,16 @@ services:
         sync: false
       - key: BACKEND_CORS_ORIGINS
         fromService:
-          type: web
+          type: static
           name: task-optimizer-ai-frontend
           envVarKey: RENDER_EXTERNAL_URL
 
-  - type: web
+  - type: static
     name: task-optimizer-ai-frontend
-    env: static
     rootDir: frontend
     buildCommand: npm install && npm run build
     staticPublishPath: ./dist
     autoDeploy: true
-    plan: free
     envVars:
       - key: VITE_API_BASE_URL
         fromService:
