@@ -4,12 +4,6 @@ from pydantic import AnyHttpUrl, BeforeValidator, Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from typing_extensions import Annotated
 
-def parse_cors(v: Union[str, List[str]]) -> List[str]:
-    if isinstance(v, str) and not v.startswith("["):
-        return [i.strip() for i in v.split(",")]
-    elif isinstance(v, (list, str)):
-        return v
-    raise ValueError(v)
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
@@ -26,9 +20,19 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24 * 7  # 7 days
     
     # CORS Origins
-    BACKEND_CORS_ORIGINS: Annotated[
-        List[str], BeforeValidator(parse_cors)
-    ] = ["http://localhost:5173", "http://localhost:3000", "http://127.0.0.1:5173"]
+    BACKEND_CORS_ORIGINS: Union[List[str], str] = ["http://localhost:5173", "http://localhost:3000", "http://127.0.0.1:5173"]
+
+    from pydantic import field_validator
+
+    @field_validator("BACKEND_CORS_ORIGINS")
+    @classmethod
+    def assemble_cors_origins(cls, v: Union[str, List[str]]) -> List[str]:
+        if isinstance(v, str) and not v.startswith("["):
+            return [i.strip() for i in v.split(",") if i.strip()]
+        elif isinstance(v, str) and v.startswith("["):
+            import json
+            return json.loads(v)
+        return v
 
     # Firebase configuration
     FIREBASE_CREDENTIALS_PATH: str = Field(default="")
