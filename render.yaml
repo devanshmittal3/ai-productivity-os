@@ -3,7 +3,7 @@ services:
     name: task-optimizer-ai-backend
     env: docker
     rootDir: backend
-    dockerfilePath: ./Dockerfile
+    dockerfilePath: ./backend/Dockerfile
     autoDeploy: true
     plan: free
     envVars:
