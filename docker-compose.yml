@@ -10,8 +10,10 @@ services:
     environment:
       - GEMINI_API_KEY=${GEMINI_API_KEY}
       - FIREBASE_PROJECT_ID=${FIREBASE_PROJECT_ID}
-      - SECRET_KEY=${SECRET_KEY}
-      - BACKEND_CORS_ORIGINS=["http://localhost:3000"]
+      - FIREBASE_CREDENTIALS_PATH=${FIREBASE_CREDENTIALS_PATH:-}
+      - SECRET_KEY=${SECRET_KEY:-change-me-in-production}
+      - BACKEND_CORS_ORIGINS=${BACKEND_CORS_ORIGINS:-["http://localhost:3000"]}
+      - PORT=8000
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/"]
@@ -23,8 +25,14 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
+      args:
+        VITE_API_BASE_URL: ${VITE_API_BASE_URL:-/api/v1}
     ports:
       - "3000:80"
+    environment:
+      - BACKEND_HOST=${BACKEND_HOST:-backend}
+      - BACKEND_PORT=${BACKEND_PORT:-8000}
+      - BACKEND_SCHEME=${BACKEND_SCHEME:-http}
     depends_on:
       backend:
         condition: service_healthy

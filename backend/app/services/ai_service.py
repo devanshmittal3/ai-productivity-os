@@ -214,6 +214,6 @@ class AIService:
         if "email" in schema_name:
             return {
                 "subject": "Mock Subject: Project Sync",
-                "body": "This is a mock body for email generation. Best regards."
+                "body": "This is a mock body. To generate real AI emails, please set the GEMINI_API_KEY environment variable in your Render dashboard."
             }
         return {}
