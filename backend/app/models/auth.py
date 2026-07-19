@@ -1,5 +1,5 @@
 from pydantic import BaseModel, EmailStr, Field
-from typing import Optional
+
 
 class UserSettingsSchema(BaseModel):
     theme: str = Field(default="dark", pattern="^(light|dark)$")

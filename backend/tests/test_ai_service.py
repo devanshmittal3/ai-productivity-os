@@ -61,7 +61,7 @@ def test_generate_text_live_success(mock_model_class):
     with patch("app.services.ai_service.is_mock_ai", False):
         res = AIService.generate_text("some prompt")
         assert res == "live generated text"
-        mock_model.generate_content.assert_called_once_with("some prompt")
+        mock_model.generate_content.assert_called_once_with("some prompt", request_options={"timeout": 15})
 
 @patch("google.generativeai.GenerativeModel")
 def test_generate_text_live_failure(mock_model_class):

@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any
 from datetime import datetime
 from app.models.task import TaskResponseSchema
 from app.models.calendar import CalendarEventResponseSchema

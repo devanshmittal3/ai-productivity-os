@@ -1,0 +1,44 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: task-optimizer-backend
+  namespace: default
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/maxScale: '10'
+        autoscaling.knative.dev/minScale: '1'
+    spec:
+      containers:
+      - image: gcr.io/PROJECT_ID/task-optimizer-backend:latest
+        ports:
+        - containerPort: 8000
+        env:
+        - name: GEMINI_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: app-secrets
+              key: gemini-api-key
+        - name: FIREBASE_PROJECT_ID
+          valueFrom:
+            secretKeyRef:
+              name: app-secrets
+              key: firebase-project-id
+        - name: SECRET_KEY
+          valueFrom:
+            secretKeyRef:
+              name: app-secrets
+              key: secret-key
+        - name: BACKEND_CORS_ORIGINS
+          value: 'https://task-optimizer-frontend-REGION-PROJECT_ID.a.run.app'
+        - name: PORT
+          value: '8000'
+        resources:
+          limits:
+            cpu: '1'
+            memory: '512Mi'
+          requests:
+            cpu: '100m'
+            memory: '256Mi'
+      serviceAccountName: task-optimizer-sa

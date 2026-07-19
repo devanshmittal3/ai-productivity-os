@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import {
   Play,
   Plus,
@@ -75,7 +75,7 @@ export const WorkflowsView: React.FC<WorkflowsViewProps> = ({
     fetchWorkflows();
   }, [authToken]);
 
-  const activeWorkflow = workflows.find(w => w.id === selectedWorkflowId);
+  const activeWorkflow = useMemo(() => workflows.find(w => w.id === selectedWorkflowId), [workflows, selectedWorkflowId]);
 
   // Trigger Node Runner
   const handleRunWorkflow = async () => {

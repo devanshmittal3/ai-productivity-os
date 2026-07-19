@@ -1,4 +1,4 @@
-import os
+
 import json
 import logging
 from typing import List, Dict, Any, Optional, Generator
@@ -36,7 +36,7 @@ class AIService:
                 model_name=cls.get_model_name(),
                 system_instruction=system_instruction
             )
-            response = model.generate_content(prompt)
+            response = model.generate_content(prompt, request_options={"timeout": 15})
             return response.text
         except Exception as e:
             logger.error(f"Error during Gemini text generation: {e}")
@@ -70,13 +70,13 @@ class AIService:
                     model_name=cls.get_model_name(),
                     system_instruction=system_instruction
                 )
-                response = model.generate_content(contents, stream=True)
+                response = model.generate_content(contents, stream=True, request_options={"timeout": 15})
             else:
                 model = genai.GenerativeModel(
                     model_name=cls.get_model_name(),
                     system_instruction=system_instruction
                 )
-                response = model.generate_content(prompt, stream=True)
+                response = model.generate_content(prompt, stream=True, request_options={"timeout": 15})
                 
             for chunk in response:
                 if chunk.text:
@@ -101,7 +101,7 @@ class AIService:
                 response_mime_type="application/json",
                 response_schema=response_schema
             )
-            response = model.generate_content(prompt, generation_config=config)
+            response = model.generate_content(prompt, generation_config=config, request_options={"timeout": 15})
             return json.loads(response.text)
         except Exception as e:
             logger.error(f"Error during Gemini JSON generation: {e}")

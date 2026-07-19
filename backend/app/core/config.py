@@ -1,8 +1,8 @@
-import os
+
 from typing import List, Union
-from pydantic import AnyHttpUrl, BeforeValidator, Field
+from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
-from typing_extensions import Annotated
+
 
 
 class Settings(BaseSettings):

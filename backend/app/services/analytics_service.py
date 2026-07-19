@@ -1,5 +1,5 @@
 from typing import List, Dict, Any
-from datetime import datetime, timezone
+from datetime import datetime
 
 class AnalyticsService:
     @staticmethod

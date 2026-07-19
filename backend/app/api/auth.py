@@ -5,7 +5,7 @@ from typing import Any, Dict
 
 from app.core.config import settings
 from app.core.security import get_password_hash, verify_password, create_access_token
-from app.models.auth import UserRegisterSchema, UserLoginSchema, TokenSchema, UserDetailSchema
+from app.models.auth import UserRegisterSchema, TokenSchema, UserDetailSchema
 from app.api.deps import get_user_repository, get_current_user, UserRepositoryInterface
 
 router = APIRouter()

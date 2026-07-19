@@ -1,0 +1,46 @@
+steps:
+  # Build backend image
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/task-optimizer-backend:latest'
+      - './backend'
+    id: 'build-backend'
+
+  # Push backend image
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'push'
+      - 'gcr.io/$PROJECT_ID/task-optimizer-backend:latest'
+    id: 'push-backend'
+
+  # Build frontend image
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/task-optimizer-frontend:latest'
+      - './frontend'
+    id: 'build-frontend'
+
+  # Push frontend image
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'push'
+      - 'gcr.io/$PROJECT_ID/task-optimizer-frontend:latest'
+    id: 'push-frontend'
+
+  # Deploy backend to Cloud Run
+  - name: 'gcr.io/cloud-builders/gke-deploy'
+    args:
+      - run
+      - '--filename=k8s/'
+      - '--image=gcr.io/$PROJECT_ID/task-optimizer-backend:latest'
+      - '--location=us-central1'
+
+images:
+  - 'gcr.io/$PROJECT_ID/task-optimizer-backend:latest'
+  - 'gcr.io/$PROJECT_ID/task-optimizer-frontend:latest'
+
+timeout: '1800s'

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { AuthView } from './views/AuthView';
@@ -15,17 +15,13 @@ const API_BASE_URL = resolveApiBaseUrl(import.meta.env.VITE_API_BASE_URL);
 
 export default function App() {
   const [token, setToken] = useState<string | null>(localStorage.getItem('authToken'));
-  const [userId, setUserId] = useState<string | null>(localStorage.getItem('authUserId'));
+  const [, setUserId] = useState<string | null>(localStorage.getItem('authUserId'));
   const [userName, setUserName] = useState<string>(localStorage.getItem('authUserName') || '');
   const [telemetryTrigger, setTelemetryTrigger] = useState(0);
 
   const location = useLocation();
 
-  useEffect(() => {
-    if (userId) {
-      console.log("Session verified for user:", userId);
-    }
-  }, [userId]);
+
 
   // Clear or Set Auth State
   const handleAuthSuccess = (newToken: string, newUserId: string, newUserName: string) => {
