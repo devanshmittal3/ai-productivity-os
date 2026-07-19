@@ -14,12 +14,13 @@ services:
         sync: false
       - key: BACKEND_CORS_ORIGINS
         fromService:
-          type: static
+          type: web
           name: task-optimizer-ai-frontend
           envVarKey: RENDER_EXTERNAL_URL
 
-  - type: static
+  - type: web
     name: task-optimizer-ai-frontend
+    env: static
     rootDir: frontend
     buildCommand: npm install && npm run build
     staticPublishPath: ./dist
