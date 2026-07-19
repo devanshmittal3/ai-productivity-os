@@ -9,8 +9,9 @@ import { MeetingsView } from './views/MeetingsView';
 import { DocumentsView } from './views/DocumentsView';
 import { WorkflowsView } from './views/WorkflowsView';
 import { SettingsView } from './views/SettingsView';
+import { resolveApiBaseUrl } from './config/api';
 
-const API_BASE_URL = 'http://127.0.0.1:8000/api/v1';
+const API_BASE_URL = resolveApiBaseUrl(import.meta.env.VITE_API_BASE_URL);
 
 export default function App() {
   const [token, setToken] = useState<string | null>(localStorage.getItem('authToken'));
